@@ -41,7 +41,7 @@ RSpec.describe Comida do
   end
 
   it "Salida formateada" do
-	expect(@huevo.to_s).to eq("huevo: tiene 14.1 gramos de proteinas, 0.0 gramos de glúcidos y 19.5 gramos de lípidos.")
+	expect(@huevo.to_s).to eq("huevo: tiene 14.1 gramos de proteinas, 0.0 gramos de glúcidos y 19.5 gramos de lípidos. Su valor energético es: 231.9 Kcal")
   end
   
   it "Calcular valor energético del alimento" do
