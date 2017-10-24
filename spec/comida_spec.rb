@@ -10,6 +10,9 @@ RSpec.describe Comida do
     expect(false).to eq(false)
   end
 
+  before :all do
+    huevo = 	Alimento.new("huevo",14.1,0.0,19.5)
+  end
   it "Instanciar alimentos para comprobar constructor y variables de instancias para proteinas, glúcidos y lípidos" do
 	huevo = 	Alimento.new("huevo",14.1,0.0,19.5)
 	leche = 	Alimento.new("leche",3.3,4.8,3.2)
@@ -31,4 +34,10 @@ RSpec.describe Comida do
 	platanos = 	Alimento.new("platanos",1.2,21.4,0.2)
 
   end
+
+  it "Métodos getters" do
+
+	expect(huevo.get_proteinas()).to eq(14.1)
+  end
+
 end
