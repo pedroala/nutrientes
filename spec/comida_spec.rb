@@ -8,4 +8,8 @@ RSpec.describe Comida do
   it "does something useful" do
     expect(false).to eq(false)
   end
+
+  it "Instanciar alimentos para comprobar constructor y variables de instancias para proteinas, glúcidos y lípidos" do
+	@huevo = 	Alimento.new(huevo,14.1,0.0,19.5)
+  end
 end
