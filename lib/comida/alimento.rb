@@ -9,4 +9,9 @@ class Alimento
 
 		@valor_energetico = 0.0
 	end
+
+	def to_s
+
+		"#{@nombre}: tiene #{@proteinas} gramos de proteinas, #{@glucidos} gramos de glúcidos y #{@lipidos} gramos de lípidos."
+	end
 end
