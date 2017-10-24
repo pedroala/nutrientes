@@ -32,15 +32,16 @@ RSpec.describe Comida do
   end
 
   it "Instanciar alimentos para comprobar constructor y variables de instancias para proteinas, glúcidos y lípidos" do
-
 	expect(@huevo.class).to eq(Alimento)
 	#Más el before que instancia y eso hace que compruebe
-
   end
 
   it "Métodos getters" do
-
 	expect(@huevo.proteinas).to eq(14.1)
+  end
+
+  it "Salida formateada" do
+	expect(@huevo).to eq("huevo: tiene 14.1 gramos de proteinas, 0.0 gramos de glúcidos y 19.5 gramos de lípidos.")
   end
 
 end
