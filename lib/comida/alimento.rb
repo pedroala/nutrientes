@@ -36,11 +36,29 @@ class Lista_Alimento
 
 		@head = Node.new()
 		@cola = Node.new()
+		@vector_nodos = []
 
 		@head.value = 0.0
 		@cola.value = 0.0
 	end
 
+	def insertar (nodo1)
 
+		if (@head.next == nil)	
+
+			@vector_nodos[0] = Node.new()
+
+			@vector_nodos[0].value = nodo1.value.nombre
+			@vector_nodos[0].next = @cola.value
+			@vector_nodos[0].prev = @head.value
+
+			@head.next = @vector_nodos[0].value
+			@cola.prev = @vector_nodos[0].value
+
+		else
+			
+
+		end
+	end
 
 end

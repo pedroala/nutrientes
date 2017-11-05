@@ -21,7 +21,7 @@ RSpec.describe Comida do
 	@cebolla = 	Alimento.new("cebolla",1.3,5.8,0.3)
 	@manzana = 	Alimento.new("manzana",0.3,12.4,0.4)
 	@platanos = Alimento.new("platanos",1.2,21.4,0.2)
-	@A = Node.new(2,3,1)
+	@A = Node.new(@huevo,2,nil)
 	@List = Lista_Alimento.new()
   end
 	context "Pruebas clase Alimento" do
@@ -57,6 +57,14 @@ RSpec.describe Comida do
 	  it "Comprobar que los atributos de la lista pueden obtenerse - Métodos getters" do
 
 	  	expect(@List.head.next).to eq(nil)
+	  	expect(@List.head.prev).to eq(nil)
+	  	expect(@List.head.value).to eq(0.0)
+
+	  end
+
+	  it "Insertar un elemento en la lista" do
+	  	@List.insertar(@A)
+	  	expect(@List.head.next).to eq(@huevo.nombre)
 	  	expect(@List.head.prev).to eq(nil)
 	  	expect(@List.head.value).to eq(0.0)
 
