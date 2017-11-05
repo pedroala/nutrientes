@@ -52,4 +52,13 @@ RSpec.describe Comida do
   	expect(@List.class).to eq(Lista_Alimento)
   end
 
+  it "Comprobar que los atributos de la lista pueden obtenerse - Métodos getters" do
+
+  	expect(@List.head.next).to eq(nil)
+  	expect(@List.head.prev).to eq(nil)
+  	expect(@List.head.value).to eq(0.0)
+
+
+  end
+
 end

@@ -31,7 +31,7 @@ Node = Struct.new(:value, :next, :prev)
 
 class Lista_Alimento
 
-
+	attr_reader :head, :cola
 	def initialize ()
 
 		@head = Node.new()
