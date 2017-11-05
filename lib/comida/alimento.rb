@@ -72,4 +72,31 @@ class Lista_Alimento
 		end
 	end
 
+	def insert_head (nodo2)
+
+		if defined?(@@number_nodes_head)
+			@@number_nodes_head += -1
+			@vector_nodos [@@number_nodes_head] = Node.new()
+
+			@vector_nodos[@@number_nodes_head].value = nodo2.value.nombre
+			@vector_nodos[@@number_nodes_head].next = @vector_nodos[@@number_nodes_head + 1].value
+			@vector_nodos[@@number_nodes_head].prev = @head.value
+
+			@vector_nodos[@@number_nodes_head + 1].prev = @vector_nodos[@@number_nodes_head].value
+			@head.next = @vector_nodos[@@number_nodes_head].value
+
+		else	#primer nodo insertado por la cabeza
+			@@number_nodes_head = -1
+			@vector_nodos [@@number_nodes_head] = Node.new()
+
+			@vector_nodos[@@number_nodes_head].value = nodo2.value.nombre
+			@vector_nodos[@@number_nodes_head].next = @vector_nodos[0].value
+			@vector_nodos[@@number_nodes_head].prev = @head.value
+
+			@head.next = @vector_nodos[@@number_nodes_head].value
+			@vector_nodos[0].prev = @vector_nodos[@@number_nodes_head].value
+
+		end
+	end
+
 end

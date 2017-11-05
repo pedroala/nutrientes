@@ -23,6 +23,8 @@ RSpec.describe Comida do
 	@platanos = Alimento.new("platanos",1.2,21.4,0.2)
 	@A = Node.new(@huevo,2,nil)
 	@B = Node.new(@leche,3,nil)
+	@C = Node.new(@lentejas,4,nil)
+	@D = Node.new(@tomate,5,nil)
 	@List = Lista_Alimento.new()
   end
 	context "Pruebas clase Alimento" do
@@ -63,7 +65,7 @@ RSpec.describe Comida do
 
 	  end
 
-	  it "Insertar un elemento en la lista" do
+	  it "Insertar un elemento en la lista - por defecto inserta por la cola" do
 	  	@List.insertar(@A)
 	  	expect(@List.head.next).to eq(@huevo.nombre)
 	  	expect(@List.head.prev).to eq(nil)
@@ -76,6 +78,18 @@ RSpec.describe Comida do
 	  	expect(@List.head.value).to eq(0.0)
 	  	expect(@List.vector_nodos[1].value).to eq(@leche.nombre) #vector_nodos[1] porque el 0 es huevo
 	  	expect(@List.cola.prev).to eq(@leche.nombre)
+	  end
+
+	  it "Insertar por la cabeza de la lista" do
+
+	  	@List.insert_head(@C)
+	  	expect(@List.head.next).to eq(@lentejas.nombre)
+	  	expect(@List.vector_nodos[-1].value).to eq(@lentejas.nombre)
+
+	  	@List.insert_head(@D)
+	  	expect(@List.head.next).to eq(@tomate.nombre)
+	  	expect(@List.vector_nodos[-2].value).to eq(@tomate.nombre)
+
 	  end
 	end
 end
