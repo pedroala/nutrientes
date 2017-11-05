@@ -2,14 +2,6 @@ require "spec_helper"
 
 RSpec.describe Comida do
 
-  it "has a version number" do
-    expect(Comida::VERSION).not_to be nil
-  end
-
-  it "does something useful" do
-    expect(false).to eq(false)
-  end
-
   before :all do
     @huevo = 	Alimento.new("huevo",14.1,0.0,19.5)
 	@leche = 	Alimento.new("leche",3.3,4.8,3.2)
@@ -29,6 +21,7 @@ RSpec.describe Comida do
 	@cebolla = 	Alimento.new("cebolla",1.3,5.8,0.3)
 	@manzana = 	Alimento.new("manzana",0.3,12.4,0.4)
 	@platanos = Alimento.new("platanos",1.2,21.4,0.2)
+	@A = Node.new(2,3,1)
   end
 
   it "Instanciar alimentos para comprobar constructor y variables de instancias para proteinas, glúcidos y lípidos" do
@@ -46,5 +39,10 @@ RSpec.describe Comida do
   
   it "Calcular valor energético del alimento" do
 	expect(@huevo.valor_energetico).to eq(231.9)
+  end
+
+  it "Crear Nodo" do
+
+  	expect(@A.class).to eq(Node)
   end
 end

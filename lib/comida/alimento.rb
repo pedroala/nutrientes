@@ -1,4 +1,11 @@
+
+
+
+
 class Alimento
+
+	
+
 	attr_reader :nombre, :proteinas, :glucidos, :lipidos, :valor_energetico
 	def initialize (nombre, pro, glu, lip)
 
@@ -20,4 +27,4 @@ class Alimento
 	end
 end
 
-Node = struct.new(:value, :next, :prev)
+Node = Struct.new(:value, :next, :prev)
