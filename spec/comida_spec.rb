@@ -91,5 +91,12 @@ RSpec.describe Comida do
 	  	expect(@List.vector_nodos[-2].value).to eq(@tomate.nombre)
 
 	  end
+
+	  it "Eliminar nodo por la cabeza" do
+
+	  	@List.eliminar_head()
+	  	expect(@List.head.next).to eq(@lentejas.nombre)
+	  	expect(@List.vector_nodos[-1].prev).to eq(@List.head.value)
+	  end
 	end
 end

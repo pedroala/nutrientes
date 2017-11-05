@@ -99,4 +99,16 @@ class Lista_Alimento
 		end
 	end
 
+	def eliminar_head ()
+
+		if (@head.next != nil)
+			@@number_nodes_head += 1
+
+			@head.next = @vector_nodos[@@number_nodes_head].value
+			@vector_nodos[@@number_nodes_head].prev = @head.value
+		end
+
+	end
+
+
 end
