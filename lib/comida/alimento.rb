@@ -19,3 +19,5 @@ class Alimento
 		@valor_energetico = (@proteinas+@glucidos)*4 + @lipidos*9
 	end
 end
+
+Node = struct.new(:value, :next, :prev)
