@@ -24,41 +24,42 @@ RSpec.describe Comida do
 	@A = Node.new(2,3,1)
 	@List = Lista_Alimento.new()
   end
+	context "Pruebas clase Alimento" do
+	  it "Instanciar alimentos para comprobar constructor y variables de instancias para proteinas, glúcidos y lípidos" do
+		expect(@huevo.class).to eq(Alimento)
+		#Más el before que instancia y eso hace que compruebe
+	  end
 
-  it "Instanciar alimentos para comprobar constructor y variables de instancias para proteinas, glúcidos y lípidos" do
-	expect(@huevo.class).to eq(Alimento)
-	#Más el before que instancia y eso hace que compruebe
-  end
+	  it "Métodos getters" do
+		expect(@huevo.proteinas).to eq(14.1)
+	  end
 
-  it "Métodos getters" do
-	expect(@huevo.proteinas).to eq(14.1)
-  end
+	  it "Salida formateada" do
+		expect(@huevo.to_s).to eq("huevo: tiene 14.1 gramos de proteinas, 0.0 gramos de glúcidos y 19.5 gramos de lípidos. Su valor energético es: 231.9 Kcal")
+	  end
+	  
+	  it "Calcular valor energético del alimento" do
+		expect(@huevo.valor_energetico).to eq(231.9)
+	  end
+	end
 
-  it "Salida formateada" do
-	expect(@huevo.to_s).to eq("huevo: tiene 14.1 gramos de proteinas, 0.0 gramos de glúcidos y 19.5 gramos de lípidos. Su valor energético es: 231.9 Kcal")
-  end
-  
-  it "Calcular valor energético del alimento" do
-	expect(@huevo.valor_energetico).to eq(231.9)
-  end
+	context "Pruebas clase Lista_Alimento" do
+	  it "Crear Nodo" do
+	  	expect(@A.class).to eq(Node)
+	  	#Más la instanciación en el before
+	  end
 
-  it "Crear Nodo" do
-  	expect(@A.class).to eq(Node)
-  	#Más la instanciación en el before
-  end
+	  it "Crear lista con head y cola" do
 
-  it "Crear lista con head y cola" do
+	  	expect(@List.class).to eq(Lista_Alimento)
+	  end
 
-  	expect(@List.class).to eq(Lista_Alimento)
-  end
+	  it "Comprobar que los atributos de la lista pueden obtenerse - Métodos getters" do
 
-  it "Comprobar que los atributos de la lista pueden obtenerse - Métodos getters" do
+	  	expect(@List.head.next).to eq(nil)
+	  	expect(@List.head.prev).to eq(nil)
+	  	expect(@List.head.value).to eq(0.0)
 
-  	expect(@List.head.next).to eq(nil)
-  	expect(@List.head.prev).to eq(nil)
-  	expect(@List.head.value).to eq(0.0)
-
-
-  end
-
+	  end
+	end
 end
