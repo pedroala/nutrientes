@@ -22,6 +22,7 @@ RSpec.describe Comida do
 	@manzana = 	Alimento.new("manzana",0.3,12.4,0.4)
 	@platanos = Alimento.new("platanos",1.2,21.4,0.2)
 	@A = Node.new(@huevo,2,nil)
+	@B = Node.new(@leche,3,nil)
 	@List = Lista_Alimento.new()
   end
 	context "Pruebas clase Alimento" do
@@ -67,7 +68,14 @@ RSpec.describe Comida do
 	  	expect(@List.head.next).to eq(@huevo.nombre)
 	  	expect(@List.head.prev).to eq(nil)
 	  	expect(@List.head.value).to eq(0.0)
+	  	expect(@List.cola.prev).to eq(@huevo.nombre)
 
+	  	@List.insertar(@B)
+	  	expect(@List.head.next).to eq(@huevo.nombre)
+	  	expect(@List.head.prev).to eq(nil)
+	  	expect(@List.head.value).to eq(0.0)
+	  	expect(@List.vector_nodos[1].value).to eq(@leche.nombre) #vector_nodos[1] porque el 0 es huevo
+	  	expect(@List.cola.prev).to eq(@leche.nombre)
 	  end
 	end
 end

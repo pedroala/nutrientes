@@ -27,11 +27,13 @@ class Alimento
 	end
 end
 
+#derivar clases de alimento aquí
+
 Node = Struct.new(:value, :next, :prev)
 
 class Lista_Alimento
 
-	attr_reader :head, :cola
+	attr_reader :head, :cola, :vector_nodos
 	def initialize ()
 
 		@head = Node.new()
@@ -42,22 +44,31 @@ class Lista_Alimento
 		@cola.value = 0.0
 	end
 
-	def insertar (nodo1)
+	def insertar (nodo1) #como siguiente nodo
 
-		if (@head.next == nil)	
+		
 
-			@vector_nodos[0] = Node.new()
+		if defined?(@@number_of_nodes)
+			@@number_of_nodes += 1
+			@vector_nodos [@@number_of_nodes] = Node.new()
+			@vector_nodos[@@number_of_nodes].value = nodo1.value.nombre
+			@vector_nodos[@@number_of_nodes].next = @cola.value
+			@vector_nodos[@@number_of_nodes].prev = @vector_nodos[@@number_of_nodes - 1].value
 
-			@vector_nodos[0].value = nodo1.value.nombre
-			@vector_nodos[0].next = @cola.value
-			@vector_nodos[0].prev = @head.value
-
-			@head.next = @vector_nodos[0].value
-			@cola.prev = @vector_nodos[0].value
+			@vector_nodos[@@number_of_nodes - 1].next = @vector_nodos[@@number_of_nodes].value
+			@cola.prev = @vector_nodos[@@number_of_nodes].value
 
 		else
-			
+			#lista vacía - solo head y cola
+			@@number_of_nodes = 0
+			@vector_nodos [@@number_of_nodes] = Node.new()
 
+			@vector_nodos[@@number_of_nodes].value = nodo1.value.nombre
+			@vector_nodos[@@number_of_nodes].next = @cola.value
+			@vector_nodos[@@number_of_nodes].prev = @head.value
+
+			@head.next = @vector_nodos[@@number_of_nodes].value
+			@cola.prev = @vector_nodos[@@number_of_nodes].value
 		end
 	end
 
