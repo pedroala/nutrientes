@@ -22,6 +22,7 @@ RSpec.describe Comida do
 	@manzana = 	Alimento.new("manzana",0.3,12.4,0.4)
 	@platanos = Alimento.new("platanos",1.2,21.4,0.2)
 	@A = Node.new(2,3,1)
+	@List = Lista_Alimento.new()
   end
 
   it "Instanciar alimentos para comprobar constructor y variables de instancias para proteinas, glúcidos y lípidos" do
@@ -42,7 +43,13 @@ RSpec.describe Comida do
   end
 
   it "Crear Nodo" do
-
   	expect(@A.class).to eq(Node)
+  	#Más la instanciación en el before
   end
+
+  it "Crear lista con head y cola" do
+
+  	expect(@List.class).to eq(Lista_Alimento)
+  end
+
 end

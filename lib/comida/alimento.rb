@@ -28,3 +28,19 @@ class Alimento
 end
 
 Node = Struct.new(:value, :next, :prev)
+
+class Lista_Alimento
+
+
+	def initialize ()
+
+		@head = Node.new()
+		@cola = Node.new()
+
+		@head.value = 0.0
+		@cola.value = 0.0
+	end
+
+
+
+end
