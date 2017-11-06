@@ -21,10 +21,11 @@ RSpec.describe Comida do
 	@cebolla = 	Alimento.new("cebolla",1.3,5.8,0.3)
 	@manzana = 	Alimento.new("manzana",0.3,12.4,0.4)
 	@platanos = Alimento.new("platanos",1.2,21.4,0.2)
-	@A = Node.new(@huevo,2,nil)
-	@B = Node.new(@leche,3,nil)
-	@C = Node.new(@lentejas,4,nil)
-	@D = Node.new(@tomate,5,nil)
+	@A = Node.new(@huevo)
+	@B = Node.new(@leche)
+	@C = Node.new(@lentejas)
+	@D = Node.new(@tomate)
+	@E = Node.new(@manzana)
 	@List = Lista_Alimento.new()
   end
 	context "Pruebas clase Alimento" do
@@ -59,7 +60,7 @@ RSpec.describe Comida do
 
 	  it "Comprobar que los atributos de la lista pueden obtenerse - Métodos getters" do
 
-	  	expect(@List.head.next).to eq(nil)
+	  	expect(@List.head.next.value).to eq(0.0)
 	  	expect(@List.head.prev).to eq(nil)
 	  	expect(@List.head.value).to eq(0.0)
 
@@ -67,36 +68,60 @@ RSpec.describe Comida do
 
 	  it "Insertar un elemento en la lista - por defecto inserta por la cola" do
 	  	@List.insertar(@A)
-	  	expect(@List.head.next).to eq(@huevo.nombre)
+	  	expect(@List.head.next.value).to eq(@huevo)
 	  	expect(@List.head.prev).to eq(nil)
 	  	expect(@List.head.value).to eq(0.0)
-	  	expect(@List.cola.prev).to eq(@huevo.nombre)
+	  	expect(@List.cola.prev.value).to eq(@huevo)
 
 	  	@List.insertar(@B)
-	  	expect(@List.head.next).to eq(@huevo.nombre)
+	  	expect(@List.head.next.value).to eq(@huevo)
 	  	expect(@List.head.prev).to eq(nil)
 	  	expect(@List.head.value).to eq(0.0)
-	  	expect(@List.vector_nodos[1].value).to eq(@leche.nombre) #vector_nodos[1] porque el 0 es huevo
-	  	expect(@List.cola.prev).to eq(@leche.nombre)
+	  	expect(@List.cola.prev.value).to eq(@leche)
+
+	    @List.insertar(@C)
+	  	expect(@List.head.next.value).to eq(@huevo)
+	  	expect(@List.head.prev).to eq(nil)
+	  	expect(@List.head.value).to eq(0.0)
+	  	expect(@List.cola.prev.value).to eq(@lentejas)
+
+	  	@List.insertar(@D)
+	  	expect(@List.head.next.value).to eq(@huevo)
+	  	expect(@List.head.prev).to eq(nil)
+	  	expect(@List.head.value).to eq(0.0)
+	  	expect(@List.cola.prev.value).to eq(@tomate)
+
 	  end
 
 	  it "Insertar por la cabeza de la lista" do
 
-	  	@List.insert_head(@C)
-	  	expect(@List.head.next).to eq(@lentejas.nombre)
-	  	expect(@List.vector_nodos[-1].value).to eq(@lentejas.nombre)
+	  	expect(@List.head.next.value).to eq(@huevo)
+	  	@List.insert_head(@E)
+	  	expect(@List.head.next.value).to eq(@manzana)
 
-	  	@List.insert_head(@D)
-	  	expect(@List.head.next).to eq(@tomate.nombre)
-	  	expect(@List.vector_nodos[-2].value).to eq(@tomate.nombre)
-
+#	  	@List.insert_head(@D)
+#	  	expect(@List.head.next.value).to eq(@tomate)
+#
+#
 	  end
 
 	  it "Eliminar nodo por la cabeza" do
-
+	  	expect(@List.head.next.value).to eq(@manzana)
 	  	@List.eliminar_head()
-	  	expect(@List.head.next).to eq(@lentejas.nombre)
-	  	expect(@List.vector_nodos[-1].prev).to eq(@List.head.value)
+	  	expect(@List.head.next.value).to eq(@huevo)
+	  	@List.eliminar_head()
+	  	expect(@List.head.next.value).to eq(@leche)
+	  end
+
+	  it "Eliminar nodo por la cola" do
+	  	expect(@List.cola.prev.value).to eq(@tomate)
+	  	@List.eliminar_cola()
+	  	expect(@List.cola.prev.value).to eq(@lentejas)
+	  end
+
+	  it "Mostrar elementos de la lista de alimentos" do
+
+	  	#@List.to_s()
 	  end
 	end
 end

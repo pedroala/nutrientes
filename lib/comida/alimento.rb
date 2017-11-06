@@ -33,82 +33,109 @@ Node = Struct.new(:value, :next, :prev)
 
 class Lista_Alimento
 
-	attr_reader :head, :cola, :vector_nodos
+	attr_reader :head, :cola
 	def initialize ()
 
 		@head = Node.new()
 		@cola = Node.new()
-		@vector_nodos = []
-
+		
 		@head.value = 0.0
+		@head.prev = nil
+		@head.next = @cola
+
 		@cola.value = 0.0
+		@cola.prev = @head
+		@cola.next = nil
 	end
 
-	def insertar (nodo1) #como siguiente nodo
+	def insertar (nodo1) #como siguiente nodo - cola
 
 		
 
 		if defined?(@@number_of_nodes)
 			@@number_of_nodes += 1
-			@vector_nodos [@@number_of_nodes] = Node.new()
-			@vector_nodos[@@number_of_nodes].value = nodo1.value.nombre
-			@vector_nodos[@@number_of_nodes].next = @cola.value
-			@vector_nodos[@@number_of_nodes].prev = @vector_nodos[@@number_of_nodes - 1].value
+			aux = Node.new()
 
-			@vector_nodos[@@number_of_nodes - 1].next = @vector_nodos[@@number_of_nodes].value
-			@cola.prev = @vector_nodos[@@number_of_nodes].value
+			aux = @cola.prev
+
+			aux.next = nodo1
+			nodo1.prev = aux
+			nodo1.next = @cola
+			@cola.prev = nodo1
 
 		else
 			#lista vacía - solo head y cola
-			@@number_of_nodes = 0
-			@vector_nodos [@@number_of_nodes] = Node.new()
+			@@number_of_nodes = 1
 
-			@vector_nodos[@@number_of_nodes].value = nodo1.value.nombre
-			@vector_nodos[@@number_of_nodes].next = @cola.value
-			@vector_nodos[@@number_of_nodes].prev = @head.value
+			nodo1.next = @cola
+			nodo1.prev = @head
 
-			@head.next = @vector_nodos[@@number_of_nodes].value
-			@cola.prev = @vector_nodos[@@number_of_nodes].value
+			@head.next = nodo1
+			@cola.prev = nodo1
 		end
 	end
 
 	def insert_head (nodo2)
 
-		if defined?(@@number_nodes_head)
-			@@number_nodes_head += -1
-			@vector_nodos [@@number_nodes_head] = Node.new()
+		if defined?(@@number_of_nodes)
+			@@number_of_nodes += 1
+			aux = Node.new()
 
-			@vector_nodos[@@number_nodes_head].value = nodo2.value.nombre
-			@vector_nodos[@@number_nodes_head].next = @vector_nodos[@@number_nodes_head + 1].value
-			@vector_nodos[@@number_nodes_head].prev = @head.value
+			aux = @head.next
 
-			@vector_nodos[@@number_nodes_head + 1].prev = @vector_nodos[@@number_nodes_head].value
-			@head.next = @vector_nodos[@@number_nodes_head].value
+			aux.prev = nodo2
+			nodo2.prev = @head
+			nodo2.next = aux
+			@head.next = nodo2
 
-		else	#primer nodo insertado por la cabeza
-			@@number_nodes_head = -1
-			@vector_nodos [@@number_nodes_head] = Node.new()
+		else
+			#lista vacía - solo head y cola
+			@@number_of_nodes = 1
 
-			@vector_nodos[@@number_nodes_head].value = nodo2.value.nombre
-			@vector_nodos[@@number_nodes_head].next = @vector_nodos[0].value
-			@vector_nodos[@@number_nodes_head].prev = @head.value
+			nodo2.next = @cola
+			nodo2.prev = @head
 
-			@head.next = @vector_nodos[@@number_nodes_head].value
-			@vector_nodos[0].prev = @vector_nodos[@@number_nodes_head].value
-
+			@head.next = nodo2
+			@cola.prev = nodo2
 		end
 	end
 
 	def eliminar_head ()
 
-		if (@head.next != nil)
-			@@number_nodes_head += 1
+		
+			@@number_of_nodes -= 1
+			aux = Node.new()
+			aux2 = Node.new()
 
-			@head.next = @vector_nodos[@@number_nodes_head].value
-			@vector_nodos[@@number_nodes_head].prev = @head.value
-		end
+			aux = @head.next
+			aux2 = aux.next
+
+			@head.next = aux2
+			@head.prev = nil
 
 	end
 
+	def eliminar_cola ()
+
+			@@number_of_nodes -= 1
+			aux = Node.new()
+			aux2 = Node.new()
+
+			aux = @cola.prev
+			aux2 = aux.prev
+
+			@cola.prev = aux2
+			@cola.next = nil
+	end
+
+	def to_s
+
+			aux = Node.new()
+			aux = @head
+
+			puts "#{aux.next}"
+	end
+
+	
 
 end
