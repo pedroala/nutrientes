@@ -130,9 +130,19 @@ RSpec.describe Comida do
 	  it "Instanciar alimentos para comprobar constructor y variables de instancias para las clases derivadas" do
 		expect(@huevo.class).to eq(Alimento)
 		expect(@pera.class).to eq(Frutas)
+		expect(@mantequilla.class).to eq(Alimentos_grasos)
 		puts @huevo.to_s()
 		puts @pera.to_s()
+		puts @mantequilla.to_s()
 		#Más el before que instancia y eso hace que compruebe
+	  end
+
+	  it "Comprobar clases y superclases, es decir, jerarquía de objetos" do
+
+	  	expect(@calabaza.class).to eq(Verduras_hortalizas)
+	  	expect(@calabaza.is_a?Alimento).to eq(true)
+	  	expect(@calabaza.is_a?Object).to eq(true)
+	  	expect(@calabaza.is_a?BasicObject).to eq(true)
 	  end
 	end
 end
