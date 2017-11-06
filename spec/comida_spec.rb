@@ -21,12 +21,18 @@ RSpec.describe Comida do
 	@cebolla = 	Alimento.new("cebolla",1.3,5.8,0.3)
 	@manzana = 	Alimento.new("manzana",0.3,12.4,0.4)
 	@platanos = Alimento.new("platanos",1.2,21.4,0.2)
+
 	@A = Node.new(@huevo)
 	@B = Node.new(@leche)
 	@C = Node.new(@lentejas)
 	@D = Node.new(@tomate)
 	@E = Node.new(@manzana)
 	@List = Lista_Alimento.new()
+
+	@mantequilla = Alimentos_grasos.new("mantequilla",0.7,0.0,83.2,"grasos")
+	@arroz = Alimentos_ricos_carbohidratos.new("arroz",6.8,77.7,0.6,"carbohidratos")
+	@calabaza = Verduras_hortalizas.new("calabaza",1.1,4.8,0.1,"verdura")
+	@pera = Frutas.new("pera",0.5,12.7,0.3,"fruta")
   end
 	context "Pruebas clase Alimento" do
 	  it "Instanciar alimentos para comprobar constructor y variables de instancias para proteinas, glúcidos y lípidos" do
@@ -68,28 +74,28 @@ RSpec.describe Comida do
 
 	  it "Insertar un elemento en la lista - por defecto inserta por la cola" do
 	  	@List.insertar(@A)
-	  	expect(@List.head.next.value).to eq(@huevo)
+	  	expect(@List.head.next.value).to eq(@huevo) 
 	  	expect(@List.head.prev).to eq(nil)
 	  	expect(@List.head.value).to eq(0.0)
-	  	expect(@List.cola.prev.value).to eq(@huevo)
+	  	expect(@List.cola.prev.value).to eq(@huevo) #Lista = HEAD->Huevo
 
 	  	@List.insertar(@B)
 	  	expect(@List.head.next.value).to eq(@huevo)
 	  	expect(@List.head.prev).to eq(nil)
 	  	expect(@List.head.value).to eq(0.0)
-	  	expect(@List.cola.prev.value).to eq(@leche)
+	  	expect(@List.cola.prev.value).to eq(@leche) #Lista = HEAD->Huevo->Leche
 
 	    @List.insertar(@C)
 	  	expect(@List.head.next.value).to eq(@huevo)
 	  	expect(@List.head.prev).to eq(nil)
 	  	expect(@List.head.value).to eq(0.0)
-	  	expect(@List.cola.prev.value).to eq(@lentejas)
+	  	expect(@List.cola.prev.value).to eq(@lentejas) #Lista = HEAD->Huevo->Leche->Lentejas
 
 	  	@List.insertar(@D)
 	  	expect(@List.head.next.value).to eq(@huevo)
 	  	expect(@List.head.prev).to eq(nil)
 	  	expect(@List.head.value).to eq(0.0)
-	  	expect(@List.cola.prev.value).to eq(@tomate)
+	  	expect(@List.cola.prev.value).to eq(@tomate) #Lista = HEAD->Huevo->Leche->Lentejas->Tomate->Cola
 
 	  end
 
@@ -97,31 +103,36 @@ RSpec.describe Comida do
 
 	  	expect(@List.head.next.value).to eq(@huevo)
 	  	@List.insert_head(@E)
-	  	expect(@List.head.next.value).to eq(@manzana)
-
-#	  	@List.insert_head(@D)
-#	  	expect(@List.head.next.value).to eq(@tomate)
-#
-#
+	  	expect(@List.head.next.value).to eq(@manzana) #Lista = HEAD->Manzana->Huevo->Leche->Lentejas->Tomate->Cola
 	  end
 
 	  it "Eliminar nodo por la cabeza" do
 	  	expect(@List.head.next.value).to eq(@manzana)
 	  	@List.eliminar_head()
-	  	expect(@List.head.next.value).to eq(@huevo)
+	  	expect(@List.head.next.value).to eq(@huevo) #Lista = HEAD->Huevo->Leche->Lentejas->Tomate->Cola
 	  	@List.eliminar_head()
-	  	expect(@List.head.next.value).to eq(@leche)
+	  	expect(@List.head.next.value).to eq(@leche) #Lista = HEAD->Leche->Lentejas->Tomate->Cola
 	  end
 
 	  it "Eliminar nodo por la cola" do
 	  	expect(@List.cola.prev.value).to eq(@tomate)
 	  	@List.eliminar_cola()
-	  	expect(@List.cola.prev.value).to eq(@lentejas)
+	  	expect(@List.cola.prev.value).to eq(@lentejas) #Lista = HEAD->Leche->Lentejas->Cola
 	  end
 
 	  it "Mostrar elementos de la lista de alimentos" do
 
-	  	#@List.to_s()
+	  expect(@List.to_s())
+	  end
+	end
+
+	context "Pruebas de clases derivadas de Alimento" do
+	  it "Instanciar alimentos para comprobar constructor y variables de instancias para las clases derivadas" do
+		expect(@huevo.class).to eq(Alimento)
+		expect(@pera.class).to eq(Frutas)
+		puts @huevo.to_s()
+		puts @pera.to_s()
+		#Más el before que instancia y eso hace que compruebe
 	  end
 	end
 end
