@@ -20,7 +20,7 @@ class Alimento
 	end
 end
 
-#derivar clases de alimento aquí
+#clases derivadas con su initialize modificado y su to_s distinto
 
 class Huevos_lacteos_helados < Alimento
 	attr_reader :tipo
@@ -212,6 +212,8 @@ class Lista_Alimento
 			aux.prev = nil
 			aux.next = nil
 
+			puts "Elemento eliminado por la cabeza: #{aux.value}"
+
 	end
 
 	def eliminar_cola ()
@@ -226,6 +228,9 @@ class Lista_Alimento
 			@cola.next = nil
 			aux.prev = nil
 			aux.next = nil
+
+			puts "Elemento eliminado por la cola: #{aux.value}"
+
 	end
 
 	def to_s
