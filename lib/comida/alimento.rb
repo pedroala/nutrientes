@@ -1,4 +1,5 @@
 class Alimento
+	include Comparable
 	attr_reader :nombre, :proteinas, :glucidos, :lipidos, :valor_energetico
 	def initialize (nombre, pro, glu, lip)
 
@@ -18,109 +19,15 @@ class Alimento
 	def calcular_valor_energetico
 		@valor_energetico = (@proteinas+@glucidos)*4 + @lipidos*9
 	end
+
+	def <=> (other)
+		self.valor_energetico <=> other.valor_energetico
+	end
 end
 
 #clases derivadas con su initialize modificado y su to_s distinto
 
-class Huevos_lacteos_helados < Alimento
-	attr_reader :tipo
-	def initialize (nombre, pro, glu, lip, tipo)
-		super(nombre, pro, glu, lip)
-		@tipo = tipo
-	end
-	def to_s
-		s = ""
-		s << super.to_s()
-		s << " y es #{@tipo}."
-		return s
-	end
-end
-
-class Carnes_derivados < Alimento
-	attr_reader :tipo
-	def initialize (nombre, pro, glu, lip, tipo)
-		super(nombre, pro, glu, lip)
-		@tipo = tipo
-	end
-	def to_s
-		s = ""
-		s << super.to_s()
-		s << " y es #{@tipo}."
-		return s
-	end
-end
-
-class Pescados_mariscos < Alimento
-	attr_reader :tipo
-	def initialize (nombre, pro, glu, lip, tipo)
-		super(nombre, pro, glu, lip)
-		@tipo = tipo
-	end
-	def to_s
-		s = ""
-		s << super.to_s()
-		s << " y es #{@tipo}."
-		return s
-	end
-end
-
-class Alimentos_grasos < Alimento
-	attr_reader :tipo
-	def initialize (nombre, pro, glu, lip, tipo)
-		super(nombre, pro, glu, lip)
-		@tipo = tipo
-	end
-	def to_s
-		s = ""
-		s << super.to_s()
-		s << " y es #{@tipo}."
-		return s
-	end
-end
-
-class Alimentos_ricos_carbohidratos < Alimento
-	attr_reader :tipo
-	def initialize (nombre, pro, glu, lip, tipo)
-		super(nombre, pro, glu, lip)
-		@tipo = tipo
-	end
-	def to_s
-		s = ""
-		s << super.to_s()
-		s << " y es #{@tipo}."
-		return s
-	end
-end
-
-class Verduras_hortalizas < Alimento
-	attr_reader :tipo
-	def initialize (nombre, pro, glu, lip, tipo)
-		super(nombre, pro, glu, lip)
-		@tipo = tipo
-	end
-	def to_s
-		s = ""
-		s << super.to_s()
-		s << " y es #{@tipo}."
-		return s
-	end
-end
-
-class Frutas < Alimento
-	attr_reader :tipo
-	def initialize (nombre, pro, glu, lip, tipo)
-		super(nombre, pro, glu, lip)
-		@tipo = tipo
-	end
-	def to_s
-		s = ""
-		s << super.to_s()
-		s << " y es #{@tipo}."
-		return s
-	end
-end
-
-class Bebidas < Alimento
+class Alimentos_Dervivados < Alimento
 	attr_reader :tipo
 	def initialize (nombre, pro, glu, lip, tipo)
 		super(nombre, pro, glu, lip)

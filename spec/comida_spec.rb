@@ -29,10 +29,10 @@ RSpec.describe Comida do
 	@E = Node.new(@manzana)
 	@List = Lista_Alimento.new()
 
-	@mantequilla = Alimentos_grasos.new("mantequilla",0.7,0.0,83.2,"grasos")
-	@arroz = Alimentos_ricos_carbohidratos.new("arroz",6.8,77.7,0.6,"carbohidratos")
-	@calabaza = Verduras_hortalizas.new("calabaza",1.1,4.8,0.1,"verdura")
-	@pera = Frutas.new("pera",0.5,12.7,0.3,"fruta")
+	@mantequilla = Alimentos_Dervivados.new("mantequilla",0.7,0.0,83.2,"grasos")
+	@arroz = Alimentos_Dervivados.new("arroz",6.8,77.7,0.6,"carbohidratos")
+	@calabaza = Alimentos_Dervivados.new("calabaza",1.1,4.8,0.1,"verdura")
+	@pera = Alimentos_Dervivados.new("pera",0.5,12.7,0.3,"fruta")
   end
 	context "Pruebas clase Alimento" do
 	  it "Instanciar alimentos para comprobar constructor y variables de instancias para proteinas, glúcidos y lípidos" do
@@ -50,6 +50,10 @@ RSpec.describe Comida do
 	  
 	  it "Calcular valor energético del alimento" do
 		expect(@huevo.valor_energetico).to eq(231.9)
+		expect(@pera.valor_energetico).to eq(55.5)
+		expect(@chocolate.valor_energetico).to eq(479.2)
+
+
 	  end
 	end
 
@@ -129,8 +133,8 @@ RSpec.describe Comida do
 	context "Pruebas de clases derivadas de Alimento" do
 	  it "Instanciar alimentos para comprobar constructor y variables de instancias para las clases derivadas" do
 		expect(@huevo.class).to eq(Alimento)
-		expect(@pera.class).to eq(Frutas)
-		expect(@mantequilla.class).to eq(Alimentos_grasos)
+		expect(@pera.class).to eq(Alimentos_Dervivados)
+		expect(@mantequilla.class).to eq(Alimentos_Dervivados)
 		puts @huevo.to_s()
 		puts @pera.to_s()
 		puts @mantequilla.to_s()
@@ -139,10 +143,17 @@ RSpec.describe Comida do
 
 	  it "Comprobar clases y superclases, es decir, jerarquía de objetos" do
 
-	  	expect(@calabaza.class).to eq(Verduras_hortalizas)
+	  	expect(@calabaza.class).to eq(Alimentos_Dervivados)
 	  	expect(@calabaza.is_a?Alimento).to eq(true)
 	  	expect(@calabaza.is_a?Object).to eq(true)
 	  	expect(@calabaza.is_a?BasicObject).to eq(true)
 	  end
+	end
+
+	context "Pruebas de práctica 8 - Comparable + Enumerable + Comentarios" do
+		it "Inlcuir módulo Comparable en la clase Alimento" do
+			expect(@huevo > @pera).to eq(true) #kcal -> huevo = 231.9 | pera = 55.5
+			expect(@huevo < @chocolate).to eq(true) #kcal -> chocolate = 479.2
+		end
 	end
 end
