@@ -1,6 +1,22 @@
-##Nombre: Pedro Antonio Lima Adrián
-##Email: alu0100952599@ull.edu.es
-###Práctica 06: calcular valor energético de un alimento y uso de TDD
+## Nombre: 
+
+Pedro Antonio Lima Adrián
+
+## Email: 
+
+alu0100952599@ull.edu.es
+
+### Práctica 06: 
+
+Calcular valor energético de un alimento y uso de TDD
+ 
+###Práctica 07:
+
+Crear lista de alimentos, clases derivadas de alimento y uso TDD
+
+###Práctica 08:
+
+Modificación de clases derivadas (MEJORA RESPECTO PRACTICA 07 - UNA SOLA HERENCIA), inclusión de módulo Comparable en Alimento y Enumerable más Comparable en la lista. Además, documentación con Yard y uso TDD.
 
 # Comida
 
