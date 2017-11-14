@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
     spec.metadata["allowed_push_host"] = "https://github.com/ULL-ESIT-LPP-1718/tdd-pedroala.git"
+	spec.metadata["yard.run"] = "yri"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
@@ -36,4 +37,5 @@ Gem::Specification.new do |spec|
  # spec.add_development_dependency "guard"
  # spec.add_development_dependency "guard-rspec"
  # spec.add_development_dependency "guard-bundler"
+
 end

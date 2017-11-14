@@ -21,7 +21,8 @@ class Alimento
 	end
 
 	def <=> (other)
-		self.valor_energetico <=> other.valor_energetico
+		return nil unless other.is_a? Alimento
+		valor_energetico <=> other.valor_energetico
 	end
 end
 
@@ -44,6 +45,7 @@ end
 Node = Struct.new(:value, :next, :prev)
 
 class Lista_Alimento
+	include Enumerable, Comparable
 	attr_reader :head, :cola
 	def initialize ()
 
@@ -145,13 +147,34 @@ class Lista_Alimento
 		aux[0] = Node.new()
 		aux[0] = @head
 		i=0
-		while(@@number_of_nodes >= i) do
+		x = @@number_of_nodes
+		while(x >= i) do
 			aux[i] = aux[i].next
 
-			puts " Tamaño de la lista: #{@@number_of_nodes} alimentos ||"
+			puts " Tamaño de la lista: #{x} alimentos ||"
 			puts " Elemento: #{aux[i].value} ||"
 
-			@@number_of_nodes -= 1
+			x -= 1
+		end
+	end
+
+	def <=> (another)
+		aux = Node.new()
+
+		self.Node.value <=> another.Node.value
+	end
+
+	def each
+
+		aux = @head
+		i=0
+		y = @@number_of_nodes
+		while(y > i) do
+			aux = aux.next
+			yield aux.value
+			
+
+			y -= 1
 		end
 	end
 end

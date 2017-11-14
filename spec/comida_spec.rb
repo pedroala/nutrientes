@@ -113,6 +113,7 @@ RSpec.describe Comida do
 	  it "Eliminar nodo por la cabeza" do
 	  	expect(@List.head.next.value).to eq(@manzana)
 	  	@List.eliminar_head()
+
 	  	expect(@List.head.next.value).to eq(@huevo) #Lista = HEAD->Huevo->Leche->Lentejas->Tomate->Cola
 	  	@List.eliminar_head()
 	  	expect(@List.head.next.value).to eq(@leche) #Lista = HEAD->Leche->Lentejas->Tomate->Cola
@@ -154,6 +155,20 @@ RSpec.describe Comida do
 		it "Inlcuir módulo Comparable en la clase Alimento" do
 			expect(@huevo > @pera).to eq(true) #kcal -> huevo = 231.9 | pera = 55.5
 			expect(@huevo < @chocolate).to eq(true) #kcal -> chocolate = 479.2
+			expect(@huevo < @leche).to eq(false)
+		end
+
+		it "Inlcuir módulo Enumerable en la clase Lista" do
+
+			#expect(@List.sort(){|a,b| a <=> b}).to eq(true)
+			expect(@List.sort).to eq([@leche, @lentejas])
+			expect(@List.all?).to eq(true)
+			expect(@List.any?).to eq(true)
+			expect(@List.count).to eq(2) #
+			expect(@List.detect { |i| i == @leche}).to eq(@leche)
+			expect(@List.map{|i| i}).to eq([@leche,@lentejas])
+			expect(@List.max).to eq(@lentejas)
+
 		end
 	end
 end
