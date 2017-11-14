@@ -1,6 +1,17 @@
+# encoding: utf-8
+# Esta clase se ha creado para obtener
+# el valor energético de un alimento
+# haciendo uso del Lenguaje de Programación
+# Ruby. Se ha incluido el módulo de Comparable.
+# Author::    Pedro Lima  (mailto:alu0100952599@ull.edu.es)
+# Copyright:: Cretive Commons
+# License::   Distributes under the same terms as Ruby
+
 class Alimento
 	include Comparable
 	attr_reader :nombre, :proteinas, :glucidos, :lipidos, :valor_energetico
+
+	#Inicialización de un alimento por nombre, proteínas, ǵlúcidos y lípidos
 	def initialize (nombre, pro, glu, lip)
 
 		@nombre = nombre
@@ -11,29 +22,44 @@ class Alimento
 		@valor_energetico = calcular_valor_energetico()
 	end
 
+	#Método para mostrar una salida formateada de un alimento
 	def to_s
 
 		"#{@nombre}: tiene #{@proteinas} gramos de proteinas, #{@glucidos} gramos de glúcidos y #{@lipidos} gramos de lípidos. Su valor energético es: #{@valor_energetico} Kcal"
 	end
 
+	#Calcular el valor energético de un alimento a través de sus proteinas, glúcidos y lípidos
 	def calcular_valor_energetico
 		@valor_energetico = (@proteinas+@glucidos)*4 + @lipidos*9
 	end
 
+	#Método de comparasión para comparar alimentos y poder utilizar el módulo Comparable
 	def <=> (other)
 		return nil unless other.is_a? Alimento
 		valor_energetico <=> other.valor_energetico
 	end
 end
 
-#clases derivadas con su initialize modificado y su to_s distinto
+# encoding: utf-8
+# Esta clase se ha creado para obtener
+# alimentos derivados con herencia
+# haciendo uso del Lenguaje de Programación
+# Ruby.  
+# Author::    Pedro Lima  (mailto:alu0100952599@ull.edu.es)
+# Copyright:: Cretive Commons
+# License::   Distributes under the same terms as Ruby
+
 
 class Alimentos_Dervivados < Alimento
 	attr_reader :tipo
+
+	#Inicialización de un alimento por nombre, proteínas, ǵlúcidos y lípidos
 	def initialize (nombre, pro, glu, lip, tipo)
 		super(nombre, pro, glu, lip)
 		@tipo = tipo
 	end
+
+	#Método para mostrar una salida formateada de un alimento 
 	def to_s
 		s = ""
 		s << super.to_s()
@@ -44,9 +70,20 @@ end
 
 Node = Struct.new(:value, :next, :prev)
 
+# encoding: utf-8
+# Esta clase se ha creado para crear
+# una lista que almacene alimentos y alimentos derivados
+# haciendo uso del Lenguaje de Programación
+# Ruby. Se han incluido los módulos de Enumerable y Comparable.  
+# Author::    Pedro Lima  (mailto:alu0100952599@ull.edu.es)
+# Copyright:: Cretive Commons
+# License::   Distributes under the same terms as Ruby
+
 class Lista_Alimento
 	include Enumerable, Comparable
 	attr_reader :head, :cola
+
+	#Inicialización de una lista vacía
 	def initialize ()
 
 		@head = Node.new()
@@ -61,7 +98,8 @@ class Lista_Alimento
 		@cola.next = nil
 	end
 
-	def insertar (nodo1) #como siguiente nodo - cola
+	#Método para insertar por la cola un nodo
+	def insertar (nodo1) 
 		if defined?(@@number_of_nodes)
 			@@number_of_nodes += 1
 			aux = Node.new()
@@ -84,6 +122,7 @@ class Lista_Alimento
 		end
 	end
 
+	#Método para insertar por la cabeza un nodo
 	def insert_head (nodo2)
 		if defined?(@@number_of_nodes)
 			@@number_of_nodes += 1
@@ -108,6 +147,7 @@ class Lista_Alimento
 		end
 	end
 
+	#Método para eliminar por la cabeza un nodo y mostrarlo por pantalla
 	def eliminar_head ()
 			@@number_of_nodes -= 1
 			aux = Node.new()
@@ -125,6 +165,7 @@ class Lista_Alimento
 
 	end
 
+	#Método para eliminar por la cola un nodo y mostrarlo por pantalla
 	def eliminar_cola ()
 			@@number_of_nodes -= 1
 			aux = Node.new()
@@ -142,6 +183,7 @@ class Lista_Alimento
 
 	end
 
+	#Método para mostrar una salida formateada de un alimento
 	def to_s
 		aux = []
 		aux[0] = Node.new()
@@ -158,12 +200,14 @@ class Lista_Alimento
 		end
 	end
 
+	#Método de comparasión para comparar alimentos y poder utilizar el módulo Comparable
 	def <=> (another)
 		aux = Node.new()
 
 		self.Node.value <=> another.Node.value
 	end
 
+	#Método each para poder utilizar el módulo Enumerable
 	def each
 
 		aux = @head
