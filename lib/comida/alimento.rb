@@ -42,7 +42,7 @@ class Alimento
 	end
 
 	#Método de programación funcional
-	def aibc_iterativo
+=begin	def aibc_iterativo
 
 	i = 0
 	r = []
@@ -74,6 +74,15 @@ class Alimento
 		end
 		suma
 	end
+
+	def aibc_funcional
+
+		r = []
+		aux = @g.each do
+		end
+
+	end
+=end
 
 end
 
@@ -136,26 +145,30 @@ class Lista_Alimento
 	end
 
 	#Método para insertar por la cola un nodo
-	def insertar (nodo1) 
+	def insertar (alimento) 
+
+		aux2 = Node.new()
+		aux2.value = alimento
+
 		if defined?(@@number_of_nodes)
 			@@number_of_nodes += 1
 			aux = Node.new()
 
 			aux = @cola.prev
 
-			aux.next = nodo1
-			nodo1.prev = aux
-			nodo1.next = @cola
-			@cola.prev = nodo1
+			aux.next = aux2
+			aux2.prev = aux
+			aux2.next = @cola
+			@cola.prev = aux2
 		else
 			#lista vacía - solo head y cola
 			@@number_of_nodes = 1
 
-			nodo1.next = @cola
-			nodo1.prev = @head
+			aux2.next = @cola
+			aux2.prev = @head
 
-			@head.next = nodo1
-			@cola.prev = nodo1
+			@head.next = aux2
+			@cola.prev = aux2
 		end
 	end
 

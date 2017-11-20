@@ -4,7 +4,7 @@ RSpec.describe Comida do
 
   before :all do
     @huevo = 	Alimento.new("huevo",14.1,0.0,19.5,nil)
-	@leche = 	Alimento.new("leche",3.3,4.8,3.2,[[]])
+	@leche = 	Alimento.new("leche",3.3,4.8,3.2,nil)
 	@yogurt = 	Alimento.new("yogurt",3.8,4.9,3.8,[[6.1, 6.6, 6.3, 6.3, 6.1, 6.9, 6.8, 6.5, 6.4, 6.9, 6.8, 6.5, 6.3, 6.2, 6.7, 6.2, 5.9, 5.8, 5.8, 5.8, 5.8, 5.8, 5.9, 6.2, 6.4],[4.9, 4.9, 5.2, 5.8, 6.5, 7.0, 7.2, 7.3, 7.3, 6.6, 6.2, 6.1, 6.0, 6.1, 5.9, 5.9, 5.9, 5.9, 5.8, 5.8, 5.5, 5.5, 5.6, 5.9, 5.9]])
 	@cerdo = 	Alimento.new("cerdo",21.5,0.0,6.3,nil)
 	@ternera = 	Alimento.new("ternera",21.1,0.0,3.1,nil)
@@ -27,6 +27,7 @@ RSpec.describe Comida do
 	@C = Node.new(@lentejas)
 	@D = Node.new(@tomate)
 	@E = Node.new(@manzana)
+
 	@List = Lista_Alimento.new()
 	@List_aibc = Lista_Alimento.new()
 
@@ -39,6 +40,26 @@ RSpec.describe Comida do
 	@G = Node.new(@yogurt)
 	@H = Node.new(@chocolate)
 	@I = Node.new(@azucar)
+
+
+	@L_manzana1 = Lista_Alimento.new()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   end
@@ -85,25 +106,25 @@ RSpec.describe Comida do
 	  end
 
 	  it "Insertar un elemento en la lista - por defecto inserta por la cola" do
-	  	@List.insertar(@A)
+	  	@List.insertar(@huevo)
 	  	expect(@List.head.next.value).to eq(@huevo) 
 	  	expect(@List.head.prev).to eq(nil)
 	  	expect(@List.head.value).to eq(nil)
 	  	expect(@List.cola.prev.value).to eq(@huevo) #Lista = HEAD->Huevo
 
-	  	@List.insertar(@B)
+	  	@List.insertar(@leche)
 	  	expect(@List.head.next.value).to eq(@huevo)
 	  	expect(@List.head.prev).to eq(nil)
 	  	expect(@List.head.value).to eq(nil)
 	  	expect(@List.cola.prev.value).to eq(@leche) #Lista = HEAD->Huevo->Leche
 
-	    @List.insertar(@C)
+	    @List.insertar(@lentejas)
 	  	expect(@List.head.next.value).to eq(@huevo)
 	  	expect(@List.head.prev).to eq(nil)
 	  	expect(@List.head.value).to eq(nil)
 	  	expect(@List.cola.prev.value).to eq(@lentejas) #Lista = HEAD->Huevo->Leche->Lentejas
 
-	  	@List.insertar(@D)
+	  	@List.insertar(@tomate)
 	  	expect(@List.head.next.value).to eq(@huevo)
 	  	expect(@List.head.prev).to eq(nil)
 	  	expect(@List.head.value).to eq(nil)
@@ -179,7 +200,7 @@ RSpec.describe Comida do
 
 		end
 	end
-
+=begin
 	context "Pruebas de práctica 9 - Intento de programación funcional con ruby" do
 
 		it "Introducir lista con los datos de alimentos por individuo" do
@@ -201,5 +222,5 @@ RSpec.describe Comida do
 		end
 
 	end
-
+=end
 end
