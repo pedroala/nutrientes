@@ -150,7 +150,7 @@ class Lista_Alimento
 		aux2 = Node.new()
 		aux2.value = alimento
 
-		if defined?(@@number_of_nodes)
+		if defined?(@@number_of_nodes == 0)
 			@@number_of_nodes += 1
 			aux = Node.new()
 
@@ -162,7 +162,7 @@ class Lista_Alimento
 			@cola.prev = aux2
 		else
 			#lista vacía - solo head y cola
-			@@number_of_nodes = 1
+			@@number_of_nodes = 0
 
 			aux2.next = @cola
 			aux2.prev = @head
@@ -173,27 +173,31 @@ class Lista_Alimento
 	end
 
 	#Método para insertar por la cabeza un nodo
-	def insert_head (nodo2)
-		if defined?(@@number_of_nodes)
+	def insert_head (alimento)
+
+		aux2 = Node.new()
+		aux2.value = alimento
+
+		if defined?(@@number_of_nodes == 0)
 			@@number_of_nodes += 1
 			aux = Node.new()
 
 			aux = @head.next
-			aux.prev = nodo2
+			aux.prev = aux2
 
-			nodo2.prev = @head
-			nodo2.next = aux
-			@head.next = nodo2
+			aux2.prev = @head
+			aux2.next = aux
+			@head.next = aux2
 
 		else
 			#lista vacía - solo head y cola
-			@@number_of_nodes = 1
+			@@number_of_nodes = 0
 
-			nodo2.next = @cola
-			nodo2.prev = @head
+			aux2.next = @cola
+			aux2.prev = @head
 
-			@head.next = nodo2
-			@cola.prev = nodo2
+			@head.next = aux2
+			@cola.prev = aux2
 		end
 	end
 
@@ -239,8 +243,8 @@ class Lista_Alimento
 		aux[0] = Node.new()
 		aux[0] = @head
 		i=0
-		x = @@number_of_nodes -1
-		while(x > i) do
+		x = @@number_of_nodes
+		while(x >= i) do
 			aux[i] = aux[i].next
 
 			puts " Tamaño de la lista: #{x} alimentos ||"
@@ -263,8 +267,8 @@ class Lista_Alimento
 
 		aux = @head
 		i=0
-		y = @@number_of_nodes -1
-		while(y > i) do
+		y = @@number_of_nodes
+		while(y >= i) do
 			aux = aux.next
 			yield aux.value
 			

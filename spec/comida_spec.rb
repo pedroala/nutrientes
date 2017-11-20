@@ -135,7 +135,7 @@ RSpec.describe Comida do
 	  it "Insertar por la cabeza de la lista" do
 
 	  	expect(@List.head.next.value).to eq(@huevo)
-	  	@List.insert_head(@E)
+	  	@List.insert_head(@manzana)
 	  	expect(@List.head.next.value).to eq(@manzana) #Lista = HEAD->Manzana->Huevo->Leche->Lentejas->Tomate->Cola
 	  end
 
@@ -190,13 +190,13 @@ RSpec.describe Comida do
 		it "Inlcuir módulo Enumerable en la clase Lista" do
 
 			#expect(@List.sort(){|a,b| a <=> b}).to eq(true)
-			expect(@List.sort).to eq([@leche])
+			expect(@List.sort).to eq([@leche,@lentejas])
 			expect(@List.all?).to eq(true)
 			expect(@List.any?).to eq(true)
-			expect(@List.count).to eq(1) #
+			expect(@List.count).to eq(2) #
 			expect(@List.detect { |i| i == @leche}).to eq(@leche)
-			expect(@List.map{|i| i}).to eq([@leche])
-			expect(@List.max).to eq(@leche)
+			expect(@List.map{|i| i}).to eq([@leche,@lentejas])
+			expect(@List.max).to eq(@lentejas)
 
 		end
 	end
