@@ -4,7 +4,7 @@ RSpec.describe Comida do
 
   before :all do
     @huevo = 	Alimento.new("huevo",14.1,0.0,19.5,nil)
-	@leche = 	Alimento.new("leche",3.3,4.8,3.2,nil)
+	@leche = 	Alimento.new("leche",3.3,4.8,3.2,0.0)
 	@yogurt = 	Alimento.new("yogurt",3.8,4.9,3.8,[[6.1, 6.6, 6.3, 6.3, 6.1, 6.9, 6.8, 6.5, 6.4, 6.9, 6.8, 6.5, 6.3, 6.2, 6.7, 6.2, 5.9, 5.8, 5.8, 5.8, 5.8, 5.8, 5.9, 6.2, 6.4],[4.9, 4.9, 5.2, 5.8, 6.5, 7.0, 7.2, 7.3, 7.3, 6.6, 6.2, 6.1, 6.0, 6.1, 5.9, 5.9, 5.9, 5.9, 5.8, 5.8, 5.5, 5.5, 5.6, 5.9, 5.9]])
 	@cerdo = 	Alimento.new("cerdo",21.5,0.0,6.3,nil)
 	@ternera = 	Alimento.new("ternera",21.1,0.0,3.1,nil)
@@ -15,18 +15,14 @@ RSpec.describe Comida do
 	@aceite = 	Alimento.new("aceite",0.0,0.2,99.6,nil)
 	@chocolate =Alimento.new("chocolate",5.3,47.0,30.0,[[6.5, 6.5, 6.7, 6.5, 6.5, 6.8, 6.7, 6.2, 6.5, 7.2, 6.9, 7.0, 6.3, 6.2, 6.1, 5.9, 5.8, 6.1, 6.7, 6.7, 6.6, 6.7, 6.9, 7.2, 7.1],[4.6, 4.6, 4.7, 4.7, 4.8, 4.7, 4.8, 4.8, 4.6, 4.4, 4.7, 4.7, 4.8, 4.7, 5.2, 5.9, 5.9, 5.7, 5.4, 5.3, 5.1, 4.8, 4.8, 4.9, 5.9]])
 	@azucar =	Alimento.new("azucar",0.0,99.8,0.0,[[4.9, 5.3, 5.9, 6.7 ,7.2, 7.6, 8.0, 8.2, 8.2, 8.4, 8.3, 8.3, 8.0, 7.5, 7.1, 6.8, 6.8, 6.9, 6.8, 6.3, 6.2, 6.3, 6.2, 6.3, 6.1],[6.3, 5.4, 5.6, 5.7, 6.5, 7.4, 7.9, 7.4, 7.7, 7.9, 7.9, 7.8, 7.8, 7.8, 8.0, 8.5, 9.4, 10.8, 10.5, 9.1, 8.9, 8.3, 7.7, 7.6, 7.5]])
-	@lentejas =	Alimento.new("lentejas",23.5,52.0,1.4,nil)
+	@lentejas =	Alimento.new("lentejas",23.5,52.0,1.4,0.0)
 	@papas = 	Alimento.new("papas",2.0,15.4,0.1,nil)
 	@tomate = 	Alimento.new("tomate", 1.0,3.5,0.2,nil)
 	@cebolla = 	Alimento.new("cebolla",1.3,5.8,0.3,nil)
 	@manzana = 	Alimento.new("manzana",0.3,12.4,0.4,[[6.7, 6.5, 6.8, 6.9, 7.0, 7.1, 6.9, 6.9, 6.9, 6.7, 6.9, 7.3, 7.0, 7.0, 7.2, 7.1, 6.8, 7.2, 7.3, 7.0, 6.8, 6.7, 6.8, 6.7, 6.9],[4.6, 4.8, 5.3, 5.6, 6.1, 6.5, 6.6, 7.0, 7.0, 6.8, 6.4, 6.3, 6.1, 6.1, 6.2, 6.0, 6.1, 6.1, 6.2, 6.3, 6.4, 6.1, 6.1, 5.7, 5.9]])
 	@platanos = Alimento.new("platanos",1.2,21.4,0.2,nil)
 
-	@A = Node.new(@huevo)
-	@B = Node.new(@leche)
-	@C = Node.new(@lentejas)
-	@D = Node.new(@tomate)
-	@E = Node.new(@manzana)
+	@A = Node.new()
 
 	@List = Lista_Alimento.new()
 	@List_aibc = Lista_Alimento.new()
@@ -43,6 +39,17 @@ RSpec.describe Comida do
 
 
 	@L_manzana1 = Lista_Alimento.new()
+	@L_manzana2 = Lista_Alimento.new()
+	@L_yogurt1 = Lista_Alimento.new()
+	@L_yogurt2 = Lista_Alimento.new()
+	@L_chocolate1 = Lista_Alimento.new()
+	@L_chocolate2 = Lista_Alimento.new()
+	@L_azucar1 = Lista_Alimento.new()
+	@L_azucar2 = Lista_Alimento.new()
+
+	datos_manzana = [6.7, 6.5, 6.8, 6.9, 7.0, 7.1, 6.9, 6.9, 6.9, 6.7, 6.9, 7.3, 7.0, 7.0, 7.2, 7.1, 6.8, 7.2, 7.3, 7.0, 6.8, 6.7, 6.8, 6.7, 6.9]
+	#@L_manzana1.insert_head(@manzana.g)
+
 
 
 
@@ -189,7 +196,6 @@ RSpec.describe Comida do
 
 		it "Inlcuir módulo Enumerable en la clase Lista" do
 
-			#expect(@List.sort(){|a,b| a <=> b}).to eq(true)
 			expect(@List.sort).to eq([@leche,@lentejas])
 			expect(@List.all?).to eq(true)
 			expect(@List.any?).to eq(true)
@@ -200,18 +206,21 @@ RSpec.describe Comida do
 
 		end
 	end
-=begin
+
 	context "Pruebas de práctica 9 - Intento de programación funcional con ruby" do
 
 		it "Introducir lista con los datos de alimentos por individuo" do
 
-		    @List_aibc.insert_head(@I)
-		    @List_aibc.insert_head(@H)
-		    @List_aibc.insert_head(@G)
-		    @List_aibc.insert_head(@F)
+		    @List_aibc.insert_head(@azucar)
+		    @List_aibc.insert_head(@chocolate)
+		    @List_aibc.insert_head(@yogurt)
+		    @List_aibc.insert_head(@manzana)
 
-			expect(@List_aibc.map{|i| i}).to eq([@F.value,@G.value,@H.value,@I.value,nil])
+		    expect(@List_aibc.count).to eq(4)
+		    expect(@List_aibc.to_s())
+			#expect(@List_aibc.map{|i| i}).to eq([@manzana,@yogurt,@chocolate,@azucar])
 		end
+=begin
 		it "Comprobar AIBC de manera iterativa" do
 			expect(@manzana.aibc_iterativo()).to eq([27.999999999999993,183.25])
 			expect(@azucar.aibc_iterativo()).to eq([255.99999999999997, 196.00000000000003])
@@ -220,7 +229,7 @@ RSpec.describe Comida do
 		it "Comprobar AIBC de manera funcional" do
 			expect(@azucar.aibc_funcional()).to eq([255.99999999999997, 196.00000000000003])
 		end
-
-	end
 =end
+	end
+
 end

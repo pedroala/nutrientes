@@ -134,6 +134,7 @@ class Lista_Alimento
 
 		@head = Node.new()
 		@cola = Node.new()
+		@Tam = 0
 		
 		@head.value = nil
 		@head.prev = nil
@@ -162,7 +163,7 @@ class Lista_Alimento
 			@cola.prev = aux2
 		else
 			#lista vacía - solo head y cola
-			@@number_of_nodes = 0
+			@@number_of_nodes = 1
 
 			aux2.next = @cola
 			aux2.prev = @head
@@ -170,6 +171,7 @@ class Lista_Alimento
 			@head.next = aux2
 			@cola.prev = aux2
 		end
+		@Tam += 1
 	end
 
 	#Método para insertar por la cabeza un nodo
@@ -191,7 +193,7 @@ class Lista_Alimento
 
 		else
 			#lista vacía - solo head y cola
-			@@number_of_nodes = 0
+			@@number_of_nodes = 1
 
 			aux2.next = @cola
 			aux2.prev = @head
@@ -199,11 +201,13 @@ class Lista_Alimento
 			@head.next = aux2
 			@cola.prev = aux2
 		end
+		@Tam += 1
 	end
 
 	#Método para eliminar por la cabeza un nodo y mostrarlo por pantalla
 	def eliminar_head ()
 			@@number_of_nodes -= 1
+			@Tam -= 1
 			aux = Node.new()
 			aux2 = Node.new()
 
@@ -222,6 +226,7 @@ class Lista_Alimento
 	#Método para eliminar por la cola un nodo y mostrarlo por pantalla
 	def eliminar_cola ()
 			@@number_of_nodes -= 1
+			@Tam -= 1
 			aux = Node.new()
 			aux2 = Node.new()
 
@@ -239,19 +244,24 @@ class Lista_Alimento
 
 	#Método para mostrar una salida formateada de un alimento
 	def to_s
-		aux = []
-		aux[0] = Node.new()
-		aux[0] = @head
-		i=0
-		x = @@number_of_nodes
-		while(x >= i) do
-			aux[i] = aux[i].next
-
+		aux = @head
+		i=1
+		x = @Tam
+		while(x > i) do
+			
+			aux = aux.next
 			puts " Tamaño de la lista: #{x} alimentos ||"
-			puts " Elemento: #{aux[i].value} ||"
+			puts " Elemento: #{aux.value} ||"
 			puts " ----------------------------------------"
 
-			x -= 1
+			x = x - 1
+
+		end
+		if (aux.next != nil) 
+			puts " Tamaño de la lista: #{x} alimentos ||"
+			puts " Elemento: #{aux.next.value} ||"
+			puts " ----------------------------------------"
+		else
 		end
 	end
 
@@ -266,14 +276,16 @@ class Lista_Alimento
 	def each
 
 		aux = @head
-		i=0
-		y = @@number_of_nodes
-		while(y >= i) do
+		i=1
+		y = @Tam
+		while(y > i) do
 			aux = aux.next
 			yield aux.value
-			
-
 			y -= 1
+		end
+		if (aux.next != nil) 
+			yield aux.next.value
+		else
 		end
 	end
 end
