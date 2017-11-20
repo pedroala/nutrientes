@@ -9,15 +9,17 @@
 
 class Alimento
 	include Comparable
-	attr_reader :nombre, :proteinas, :glucidos, :lipidos, :valor_energetico
+	attr_reader :nombre, :proteinas, :glucidos, :lipidos, :valor_energetico, :g
 
 	#Inicialización de un alimento por nombre, proteínas, ǵlúcidos y lípidos
-	def initialize (nombre, pro, glu, lip)
+	def initialize (nombre, pro, glu, lip, vector_al)
 
 		@nombre = nombre
 		@proteinas = pro
 		@glucidos = glu
 		@lipidos = lip
+
+		@g = vector_al
 
 		@valor_energetico = calcular_valor_energetico()
 	end
@@ -33,10 +35,44 @@ class Alimento
 		@valor_energetico = (@proteinas+@glucidos)*4 + @lipidos*9
 	end
 
-	#Método de comparasión para comparar alimentos y poder utilizar el módulo Comparable
+	#Método de comparación para comparar alimentos y poder utilizar el módulo Comparable
 	def <=> (other)
 		return nil unless other.is_a? Alimento
 		valor_energetico <=> other.valor_energetico
+	end
+
+	#Método de programación funcional
+	def aibc_iterativo
+
+	i = 0
+	r = []
+	while i < g.size
+		index = 1
+		s = []
+		while index < g[i].size
+			if g[i][index] < g[i][0]
+			s << 0.0
+			else
+			s << (((g[i][index] - g[i][0]) + (g[i][index-1] - g[i][0]))/2)*5
+			end
+			index = index + 1
+			end
+		r << s
+		i = i + 1
+		end
+	suma = []
+	j = 0
+	while j < g.size
+		k = 0
+		s = 0
+		while k < r[j].size
+			s = s + r[j][k]
+			k = k + 1
+			end
+			suma << s
+			j = j + 1
+		end
+		suma
 	end
 end
 
@@ -54,8 +90,8 @@ class Alimentos_Dervivados < Alimento
 	attr_reader :tipo
 
 	#Inicialización de un alimento por nombre, proteínas, ǵlúcidos y lípidos
-	def initialize (nombre, pro, glu, lip, tipo)
-		super(nombre, pro, glu, lip)
+	def initialize (nombre, pro, glu, lip, vector_al, tipo)
+		super(nombre, pro, glu, lip, vector_al)
 		@tipo = tipo
 	end
 
@@ -89,11 +125,11 @@ class Lista_Alimento
 		@head = Node.new()
 		@cola = Node.new()
 		
-		@head.value = 0.0
+		@head.value = nil
 		@head.prev = nil
 		@head.next = @cola
 
-		@cola.value = 0.0
+		@cola.value = nil
 		@cola.prev = @head
 		@cola.next = nil
 	end
@@ -189,12 +225,13 @@ class Lista_Alimento
 		aux[0] = Node.new()
 		aux[0] = @head
 		i=0
-		x = @@number_of_nodes
-		while(x >= i) do
+		x = @@number_of_nodes -1
+		while(x > i) do
 			aux[i] = aux[i].next
 
 			puts " Tamaño de la lista: #{x} alimentos ||"
 			puts " Elemento: #{aux[i].value} ||"
+			puts " ----------------------------------------"
 
 			x -= 1
 		end
@@ -212,7 +249,7 @@ class Lista_Alimento
 
 		aux = @head
 		i=0
-		y = @@number_of_nodes
+		y = @@number_of_nodes -1
 		while(y > i) do
 			aux = aux.next
 			yield aux.value
