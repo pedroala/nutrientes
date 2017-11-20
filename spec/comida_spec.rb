@@ -193,8 +193,11 @@ RSpec.describe Comida do
 		end
 		it "Comprobar AIBC de manera iterativa" do
 			expect(@manzana.aibc_iterativo()).to eq([27.999999999999993,183.25])
+			expect(@azucar.aibc_iterativo()).to eq([255.99999999999997, 196.00000000000003])
+		end
 
-
+		it "Comprobar AIBC de manera funcional" do
+			expect(@azucar.aibc_funcional()).to eq([255.99999999999997, 196.00000000000003])
 		end
 
 	end

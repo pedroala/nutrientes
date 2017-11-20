@@ -56,10 +56,10 @@ class Alimento
 			s << (((g[i][index] - g[i][0]) + (g[i][index-1] - g[i][0]))/2)*5
 			end
 			index = index + 1
-			end
+		end
 		r << s
 		i = i + 1
-		end
+	end
 	suma = []
 	j = 0
 	while j < g.size
@@ -73,7 +73,6 @@ class Alimento
 			j = j + 1
 		end
 		suma
-
 	end
 
 end
