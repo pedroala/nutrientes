@@ -43,7 +43,7 @@ class Alimento
 
 	#Método de programación funcional
 	def aibc_iterativo
-=begin
+
 	i = 0
 	r = []
 	while i < g.size
@@ -73,7 +73,7 @@ class Alimento
 			j = j + 1
 		end
 		suma
-=end
+
 	end
 
 end
