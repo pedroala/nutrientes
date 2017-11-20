@@ -191,13 +191,12 @@ RSpec.describe Comida do
 
 			expect(@List_aibc.map{|i| i}).to eq([@F.value,@G.value,@H.value,@I.value,nil])
 		end
-=begin		it "Comprobar "
-		    #expect(@List_aibc.to_s())
-			expect(@manzana.aibc_iterativo()).to eq(nil)
+		it "Comprobar AIBC de manera iterativa" do
+			expect(@manzana.aibc_iterativo()).to eq([27.999999999999,183.25])
 
 
 		end
-=end
+
 	end
 
 end
