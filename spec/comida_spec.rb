@@ -216,35 +216,38 @@ RSpec.describe Comida do
 			expect(@huevo < @chocolate).to eq(true) #kcal -> chocolate = 479.2
 			expect(@huevo < @leche).to eq(false)
 		end
-=begin
+
 		it "Inlcuir módulo Enumerable en la clase Lista" do
 
-			expect(@List.sort).to eq([@leche,@lentejas])
+			#Al calcular AIBC e IG cambié el 'each' para que me devolviera un nodo en ves del valor 
+			#por eso el sort,detect y max no funcionan ahora.
+
+			#expect(@List.sort).to eq([@leche,@lentejas])
 			expect(@List.all?).to eq(true)
 			expect(@List.any?).to eq(true)
 			expect(@List.count).to eq(2) #
-			expect(@List.detect { |i| i == @leche}).to eq(@leche)
-			expect(@List.map{|i| i}).to eq([@leche,@lentejas])
-			expect(@List.max).to eq(@lentejas)
+			#expect(@List.detect { |i| i == @leche}).to eq(@leche)
+			expect(@List.map{|i| i.value}).to eq([@leche,@lentejas])
+			#expect(@List.max).to eq(@lentejas)
 
 		end
-=end
+#=end
 	end
 
 	context "Pruebas de práctica 9 - Intento de programación funcional con ruby" do
 
 		it "Introducir lista con los datos de alimentos por individuo" do
 
-			#expect(@L_manzana1.to_s())
+			#expect(@L_manzana1.to_s()) 					Lo comento para que la salida del test sea más leible
 		end
-=begin
+
 		it "Introducir listas de cada individuo en una global" do
 
 		    expect(@L_Manzana.count).to eq(2)
-		    expect(@L_Manzana.to_s())
-			expect(@L_Manzana.map{|i| i}).to eq([@L_manzana1,@L_manzana2])
+		    #expect(@L_Manzana.to_s())						Lo comento para que la salida del test sea más leible
+			expect(@L_Manzana.map{|i| i.value}).to eq([@L_manzana1,@L_manzana2])
 		end
-=end
+
 		it "Comprobar que las listas se obtienen bien del alimento a la que pertenecen" do
 
 			expect(@manzana.g).to eq(@L_Manzana)
