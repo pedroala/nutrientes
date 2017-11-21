@@ -40,41 +40,11 @@ class Alimento
 		return nil unless other.is_a? Alimento
 		valor_energetico <=> other.valor_energetico
 	end
-
-	#Método de programación funcional
-=begin	def aibc_iterativo
-
-	i = 0
-	r = []
-	while i < g.Tam
-		index = 1
-		s = []
-		while index < g[i].Tam
-			if g[i][index] < g[i][0]
-			s << 0.0
-			else
-			s << (((g[i][index] - g[i][0]) + (g[i][index-1] - g[i][0]))/2)*5
-			end
-			index = index + 1
-		end
-		r << s
-		i = i + 1
-	end
-	suma = []
-	j = 0
-	while j < g.size
-		k = 0
-		s = 0
-		while k < r[j].size
-			s = s + r[j][k]
-			k = k + 1
-			end
-			suma << s
-			j = j + 1
-		end
-		suma
-	end
-=end
+#Método para calcular el AIBC de un alimento por medio del paragidma de programación funcional, donde:
+#g representa una lista de listas  | l será un nodo de esa lista compleja 
+#l.value una lista de un individuo | j será un nodo de la lista de individuo
+#g.head.next.value -> lista de un individuo y con la variable de instancia Tam conseguimos el size.
+#Con 'take' separo según el número de individuos
 	def aibc_funcional
 
 		r = []
@@ -98,6 +68,17 @@ class Alimento
 		r[1] = (s - s.take(@@Tamaño_muestra)).reduce(:+)
 		suma = [r[0],r[1]]
 
+	end
+#Método para calcular el Índice glucémico de un alimento, le pasamos el aibc de la glucosa (azucar)
+#self es para llamar al alimento del cual queremos calcular el IG y self.g.Tam es para saber cuantos
+#individuos hay en la muestra.
+	def IG (glucosa)
+
+		i = []
+		self.aibc_funcional().zip(glucosa).map do |x|		
+			i << x.inject(:/)
+		end
+		i.map{|n| n*(100/self.g.Tam)}.inject(:+)
 	end
 end
 
