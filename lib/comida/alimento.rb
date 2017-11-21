@@ -46,10 +46,10 @@ class Alimento
 
 	i = 0
 	r = []
-	while i < g.size
+	while i < g.Tam
 		index = 1
 		s = []
-		while index < g[i].size
+		while index < g[i].Tam
 			if g[i][index] < g[i][0]
 			s << 0.0
 			else
@@ -74,7 +74,7 @@ class Alimento
 		end
 		suma
 	end
-
+=end
 	def aibc_funcional
 
 		r = []
@@ -82,7 +82,7 @@ class Alimento
 		end
 
 	end
-=end
+
 
 end
 
@@ -127,7 +127,7 @@ Node = Struct.new(:value, :next, :prev)
 
 class Lista_Alimento
 	include Enumerable, Comparable
-	attr_reader :head, :cola
+	attr_reader :head, :cola, :Tam
 
 	#Inicialización de una lista vacía
 	def initialize ()
