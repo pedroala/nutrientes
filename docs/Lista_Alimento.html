@@ -193,6 +193,35 @@ href="mailto:alu0100952599@ull.edu.es">alu0100952599@ull.edu.es</a>)</p>
 </li>
 
     
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#Tam-instance_method" title="#Tam (instance method)">#<strong>Tam</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute Tam.</p>
+</div></span>
+  
+</li>
+
+    
   </ul>
 
 
@@ -332,7 +361,7 @@ Comparable.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#insert_head-instance_method" title="#insert_head (instance method)">#<strong>insert_head</strong>(nodo2)  &#x21d2; Object </a>
+      <a href="#insert_head-instance_method" title="#insert_head (instance method)">#<strong>insert_head</strong>(alimento)  &#x21d2; Object </a>
     
 
     
@@ -356,7 +385,7 @@ Comparable.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#insertar-instance_method" title="#insertar (instance method)">#<strong>insertar</strong>(nodo1)  &#x21d2; Object </a>
+      <a href="#insertar-instance_method" title="#insertar (instance method)">#<strong>insertar</strong>(alimento)  &#x21d2; Object </a>
     
 
     
@@ -435,33 +464,35 @@ Comparable.</p>
       <pre class="lines">
 
 
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99</pre>
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 129</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span> <span class='lparen'>(</span><span class='rparen'>)</span>
 
 	<span class='ivar'>@head</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Node.html" title="Node (class)">Node</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
 	<span class='ivar'>@cola</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Node.html" title="Node (class)">Node</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
+	<span class='ivar'>@Tam</span> <span class='op'>=</span> <span class='int'>0</span>
 	
-	<span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='float'>0.0</span>
+	<span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='op'>-</span><span class='float'>1.0</span>
 	<span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='kw'>nil</span>
 	<span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='ivar'>@cola</span>
 
-	<span class='ivar'>@cola</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='float'>0.0</span>
+	<span class='ivar'>@cola</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='op'>-</span><span class='float'>1.0</span>
 	<span class='ivar'>@cola</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='ivar'>@head</span>
 	<span class='ivar'>@cola</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='kw'>nil</span>
 <span class='kw'>end</span></pre>
@@ -503,12 +534,12 @@ Comparable.</p>
       <pre class="lines">
 
 
-84
-85
-86</pre>
+126
+127
+128</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 126</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cola'>cola</span>
   <span class='ivar'>@cola</span>
@@ -546,15 +577,58 @@ Comparable.</p>
       <pre class="lines">
 
 
-84
-85
-86</pre>
+126
+127
+128</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 126</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_head'>head</span>
   <span class='ivar'>@head</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="Tam-instance_method">
+  
+    #<strong>Tam</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute Tam</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+126
+127
+128</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 126</span>
+
+<span class='kw'>def</span> <span class='const'>Tam</span>
+  <span class='ivar'>@Tam</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -595,14 +669,14 @@ Comparable</p>
       <pre class="lines">
 
 
-204
-205
-206
-207
-208</pre>
+265
+266
+267
+268
+269</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 204</span>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 265</span>
 
 <span class='kw'>def</span> <span class='op'>&lt;=&gt;</span> <span class='lparen'>(</span><span class='id identifier rubyid_another'>another</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Node.html" title="Node (class)">Node</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -640,34 +714,38 @@ Comparable</p>
       <pre class="lines">
 
 
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
-221
-222
-223</pre>
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 211</span>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 272</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each'>each</span>
 
 	<span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='ivar'>@head</span>
-	<span class='id identifier rubyid_i'>i</span><span class='op'>=</span><span class='int'>0</span>
-	<span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='cvar'>@@number_of_nodes</span>
+	<span class='id identifier rubyid_i'>i</span><span class='op'>=</span><span class='int'>1</span>
+	<span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='ivar'>@Tam</span>
 	<span class='kw'>while</span><span class='lparen'>(</span><span class='id identifier rubyid_y'>y</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_i'>i</span><span class='rparen'>)</span> <span class='kw'>do</span>
 		<span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span>
-		<span class='kw'>yield</span> <span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span>
-		
-
+		<span class='kw'>yield</span> <span class='id identifier rubyid_aux'>aux</span>
 		<span class='id identifier rubyid_y'>y</span> <span class='op'>-=</span> <span class='int'>1</span>
+	<span class='kw'>end</span>
+	<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>!=</span> <span class='kw'>nil</span><span class='rparen'>)</span> 
+		<span class='kw'>yield</span> <span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span>
+	<span class='kw'>else</span>
 	<span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -701,28 +779,30 @@ Comparable</p>
       <pre class="lines">
 
 
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184</pre>
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 169</span>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 223</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_eliminar_cola'>eliminar_cola</span> <span class='lparen'>(</span><span class='rparen'>)</span>
 		<span class='cvar'>@@number_of_nodes</span> <span class='op'>-=</span> <span class='int'>1</span>
+		<span class='ivar'>@Tam</span> <span class='op'>-=</span> <span class='int'>1</span>
 		<span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Node.html" title="Node (class)">Node</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
 		<span class='id identifier rubyid_aux2'>aux2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Node.html" title="Node (class)">Node</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
 
@@ -768,28 +848,30 @@ Comparable</p>
       <pre class="lines">
 
 
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166</pre>
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 151</span>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 204</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_eliminar_head'>eliminar_head</span> <span class='lparen'>(</span><span class='rparen'>)</span>
 		<span class='cvar'>@@number_of_nodes</span> <span class='op'>-=</span> <span class='int'>1</span>
+		<span class='ivar'>@Tam</span> <span class='op'>-=</span> <span class='int'>1</span>
 		<span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Node.html" title="Node (class)">Node</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
 		<span class='id identifier rubyid_aux2'>aux2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Node.html" title="Node (class)">Node</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
 
@@ -812,7 +894,7 @@ Comparable</p>
       <div class="method_details ">
   <h3 class="signature " id="insert_head-instance_method">
   
-    #<strong>insert_head</strong>(nodo2)  &#x21d2; <tt>Object</tt> 
+    #<strong>insert_head</strong>(alimento)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -835,55 +917,65 @@ Comparable</p>
       <pre class="lines">
 
 
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148</pre>
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 126</span>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 174</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_insert_head'>insert_head</span> <span class='lparen'>(</span><span class='id identifier rubyid_nodo2'>nodo2</span><span class='rparen'>)</span>
-	<span class='kw'>if</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='cvar'>@@number_of_nodes</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_insert_head'>insert_head</span> <span class='lparen'>(</span><span class='id identifier rubyid_alimento'>alimento</span><span class='rparen'>)</span>
+
+	<span class='id identifier rubyid_aux2'>aux2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Node.html" title="Node (class)">Node</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_aux2'>aux2</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='id identifier rubyid_alimento'>alimento</span>
+
+	<span class='kw'>if</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='cvar'>@@number_of_nodes</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span>
 		<span class='cvar'>@@number_of_nodes</span> <span class='op'>+=</span> <span class='int'>1</span>
 		<span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Node.html" title="Node (class)">Node</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
 
 		<span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span>
-		<span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='id identifier rubyid_nodo2'>nodo2</span>
+		<span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='id identifier rubyid_aux2'>aux2</span>
 
-		<span class='id identifier rubyid_nodo2'>nodo2</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='ivar'>@head</span>
-		<span class='id identifier rubyid_nodo2'>nodo2</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span>
-		<span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='id identifier rubyid_nodo2'>nodo2</span>
+		<span class='id identifier rubyid_aux2'>aux2</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='ivar'>@head</span>
+		<span class='id identifier rubyid_aux2'>aux2</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span>
+		<span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='id identifier rubyid_aux2'>aux2</span>
 
 	<span class='kw'>else</span>
 		<span class='comment'>#lista vacía - solo head y cola
 </span>		<span class='cvar'>@@number_of_nodes</span> <span class='op'>=</span> <span class='int'>1</span>
 
-		<span class='id identifier rubyid_nodo2'>nodo2</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='ivar'>@cola</span>
-		<span class='id identifier rubyid_nodo2'>nodo2</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='ivar'>@head</span>
+		<span class='id identifier rubyid_aux2'>aux2</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='ivar'>@cola</span>
+		<span class='id identifier rubyid_aux2'>aux2</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='ivar'>@head</span>
 
-		<span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='id identifier rubyid_nodo2'>nodo2</span>
-		<span class='ivar'>@cola</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='id identifier rubyid_nodo2'>nodo2</span>
+		<span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='id identifier rubyid_aux2'>aux2</span>
+		<span class='ivar'>@cola</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='id identifier rubyid_aux2'>aux2</span>
 	<span class='kw'>end</span>
+	<span class='ivar'>@Tam</span> <span class='op'>+=</span> <span class='int'>1</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -893,7 +985,7 @@ Comparable</p>
       <div class="method_details ">
   <h3 class="signature " id="insertar-instance_method">
   
-    #<strong>insertar</strong>(nodo1)  &#x21d2; <tt>Object</tt> 
+    #<strong>insertar</strong>(alimento)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -916,53 +1008,63 @@ Comparable</p>
       <pre class="lines">
 
 
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123</pre>
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 145</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_insertar'>insertar</span> <span class='lparen'>(</span><span class='id identifier rubyid_nodo1'>nodo1</span><span class='rparen'>)</span> 
-	<span class='kw'>if</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='cvar'>@@number_of_nodes</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_insertar'>insertar</span> <span class='lparen'>(</span><span class='id identifier rubyid_alimento'>alimento</span><span class='rparen'>)</span> 
+
+	<span class='id identifier rubyid_aux2'>aux2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Node.html" title="Node (class)">Node</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_aux2'>aux2</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='id identifier rubyid_alimento'>alimento</span>
+
+	<span class='kw'>if</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='cvar'>@@number_of_nodes</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span>
 		<span class='cvar'>@@number_of_nodes</span> <span class='op'>+=</span> <span class='int'>1</span>
 		<span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Node.html" title="Node (class)">Node</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
 
 		<span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='ivar'>@cola</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span>
 
-		<span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='id identifier rubyid_nodo1'>nodo1</span>
-		<span class='id identifier rubyid_nodo1'>nodo1</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span>
-		<span class='id identifier rubyid_nodo1'>nodo1</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='ivar'>@cola</span>
-		<span class='ivar'>@cola</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='id identifier rubyid_nodo1'>nodo1</span>
+		<span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='id identifier rubyid_aux2'>aux2</span>
+		<span class='id identifier rubyid_aux2'>aux2</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span>
+		<span class='id identifier rubyid_aux2'>aux2</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='ivar'>@cola</span>
+		<span class='ivar'>@cola</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='id identifier rubyid_aux2'>aux2</span>
 	<span class='kw'>else</span>
 		<span class='comment'>#lista vacía - solo head y cola
 </span>		<span class='cvar'>@@number_of_nodes</span> <span class='op'>=</span> <span class='int'>1</span>
 
-		<span class='id identifier rubyid_nodo1'>nodo1</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='ivar'>@cola</span>
-		<span class='id identifier rubyid_nodo1'>nodo1</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='ivar'>@head</span>
+		<span class='id identifier rubyid_aux2'>aux2</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='ivar'>@cola</span>
+		<span class='id identifier rubyid_aux2'>aux2</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='ivar'>@head</span>
 
-		<span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='id identifier rubyid_nodo1'>nodo1</span>
-		<span class='ivar'>@cola</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='id identifier rubyid_nodo1'>nodo1</span>
+		<span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>=</span> <span class='id identifier rubyid_aux2'>aux2</span>
+		<span class='ivar'>@cola</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span> <span class='op'>=</span> <span class='id identifier rubyid_aux2'>aux2</span>
 	<span class='kw'>end</span>
+	<span class='ivar'>@Tam</span> <span class='op'>+=</span> <span class='int'>1</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -995,38 +1097,50 @@ Comparable</p>
       <pre class="lines">
 
 
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201</pre>
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 187</span>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 242</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
-	<span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
-	<span class='id identifier rubyid_aux'>aux</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Node.html" title="Node (class)">Node</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
-	<span class='id identifier rubyid_aux'>aux</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@head</span>
-	<span class='id identifier rubyid_i'>i</span><span class='op'>=</span><span class='int'>0</span>
-	<span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='cvar'>@@number_of_nodes</span>
-	<span class='kw'>while</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_i'>i</span><span class='rparen'>)</span> <span class='kw'>do</span>
-		<span class='id identifier rubyid_aux'>aux</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span>
-
+	<span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='ivar'>@head</span>
+	<span class='id identifier rubyid_i'>i</span><span class='op'>=</span><span class='int'>1</span>
+	<span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='ivar'>@Tam</span>
+	<span class='kw'>while</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_i'>i</span><span class='rparen'>)</span> <span class='kw'>do</span>
+		
+		<span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span>
 		<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> Tamaño de la lista: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_content'> alimentos ||</span><span class='tstring_end'>&quot;</span></span>
-		<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> Elemento: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_aux'>aux</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='embexpr_end'>}</span><span class='tstring_content'> ||</span><span class='tstring_end'>&quot;</span></span>
+		<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> Elemento: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='embexpr_end'>}</span><span class='tstring_content'> ||</span><span class='tstring_end'>&quot;</span></span>
+		<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> ----------------------------------------</span><span class='tstring_end'>&quot;</span></span>
 
-		<span class='id identifier rubyid_x'>x</span> <span class='op'>-=</span> <span class='int'>1</span>
+		<span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>-</span> <span class='int'>1</span>
+
+	<span class='kw'>end</span>
+	<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> <span class='op'>!=</span> <span class='kw'>nil</span><span class='rparen'>)</span> 
+		<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> Tamaño de la lista: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_content'> alimentos ||</span><span class='tstring_end'>&quot;</span></span>
+		<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> Elemento: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='embexpr_end'>}</span><span class='tstring_content'> ||</span><span class='tstring_end'>&quot;</span></span>
+		<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> ----------------------------------------</span><span class='tstring_end'>&quot;</span></span>
+	<span class='kw'>else</span>
 	<span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1039,7 +1153,7 @@ Comparable</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Nov 14 20:05:25 2017 by
+  Generated on Tue Nov 21 22:19:30 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.3.1).
 </div>
