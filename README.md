@@ -1,23 +1,28 @@
-## Nombre: 
+### Nombre: 
 
 Pedro Antonio Lima Adrián
 
-## Email: 
+### Email: 
 
 alu0100952599@ull.edu.es
 
-### Práctica 06: 
+### Práctica 09:
 
-Calcular valor energético de un alimento y uso de TDD
- 
-### Práctica 07:
-
-Crear lista de alimentos, clases derivadas de alimento y uso TDD
+Adición de método 'aibc_funcional' y del método 'IG'.
+MEJORA RESPECTO PRACTICA 08 - pasar al insertar de la lista un alimento y no un nodo.
 
 ### Práctica 08:
 
 Modificación de clases derivadas (MEJORA RESPECTO PRACTICA 07 - UNA SOLA HERENCIA), inclusión de módulo Comparable en Alimento y Enumerable más Comparable en la lista. Además, documentación con Yard y uso TDD.
 
+### Práctica 07:
+
+Crear lista de alimentos, clases derivadas de alimento y uso TDD
+
+### Práctica 06: 
+
+Calcular valor energético de un alimento y uso de TDD
+ 
 # Comida
 
 Gema para calcular el valor energético de un alimento en base a sus proteinas, glúcidos y lípidos

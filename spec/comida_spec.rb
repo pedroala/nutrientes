@@ -4,6 +4,8 @@ RSpec.describe Comida do
 
   before :all do
 
+  	#Creación de listas para práctica 09
+
   	@L_manzana1 = Lista_Alimento.new()
 	@L_manzana2 = Lista_Alimento.new()
 	@L_yogurt1 = Lista_Alimento.new()
@@ -62,6 +64,8 @@ RSpec.describe Comida do
 	@L_Azucar.insertar(@L_azucar1)
 	@L_Azucar.insertar(@L_azucar2)
 
+	#Creación de alimentos con su nuevo atributo para datos para calcular el aibc e IG
+
     @huevo = 	Alimento.new("huevo",14.1,0.0,19.5,nil)
 	@leche = 	Alimento.new("leche",3.3,4.8,3.2,nil)
 	@yogurt = 	Alimento.new("yogurt",3.8,4.9,3.8,@L_Yogurt)
@@ -81,10 +85,14 @@ RSpec.describe Comida do
 	@manzana = 	Alimento.new("manzana",0.3,12.4,0.4,@L_Manzana)
 	@platanos = Alimento.new("platanos",1.2,21.4,0.2,nil)
 
+	#Creación de un nodo de prueba
+
 	@A = Node.new()
 
+	#Creación de lista y alimentos derivados
+
 	@List = Lista_Alimento.new()
-	@List_aibc = Lista_Alimento.new()
+	
 
 	@mantequilla = Alimentos_Dervivados.new("mantequilla",0.7,0.0,83.2,"grasos",nil)
 	@arroz = Alimentos_Dervivados.new("arroz",6.8,77.7,0.6,"carbohidratos",nil)
