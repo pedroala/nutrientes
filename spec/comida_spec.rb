@@ -47,24 +47,20 @@ RSpec.describe Comida do
 	@L_azucar1 = Lista_Alimento.new()
 	@L_azucar2 = Lista_Alimento.new()
 
-	datos_manzana = [6.7, 6.5, 6.8, 6.9, 7.0, 7.1, 6.9, 6.9, 6.9, 6.7, 6.9, 7.3, 7.0, 7.0, 7.2, 7.1, 6.8, 7.2, 7.3, 7.0, 6.8, 6.7, 6.8, 6.7, 6.9]
-	#@L_manzana1.insert_head(@manzana.g)
+	@datos_manzana = 	[6.7, 6.5, 6.8, 6.9, 7.0, 7.1, 6.9, 6.9, 6.9, 6.7, 6.9, 7.3, 7.0, 7.0, 7.2, 7.1, 6.8, 7.2, 7.3, 7.0, 6.8, 6.7, 6.8, 6.7, 6.9]
+	@datos_manzana2 =	[4.6, 4.8, 5.3, 5.6, 6.1, 6.5, 6.6, 7.0, 7.0, 6.8, 6.4, 6.3, 6.1, 6.1, 6.2, 6.0, 6.1, 6.1, 6.2, 6.3, 6.4, 6.1, 6.1, 5.7, 5.9]
+	@datos_yogurt = 	[6.1, 6.6, 6.3, 6.3, 6.1, 6.9, 6.8, 6.5, 6.4, 6.9, 6.8, 6.5, 6.3, 6.2, 6.7, 6.2, 5.9, 5.8, 5.8, 5.8, 5.8, 5.8, 5.9, 6.2, 6.4]
+	@datos_yogurt2 = 	[4.9, 4.9, 5.2, 5.8, 6.5, 7.0, 7.2, 7.3, 7.3, 6.6, 6.2, 6.1, 6.0, 6.1, 5.9, 5.9, 5.9, 5.9, 5.8, 5.8, 5.5, 5.5, 5.6, 5.9, 5.9]
+	@datos_chocolate =	[6.5, 6.5, 6.7, 6.5, 6.5, 6.8, 6.7, 6.2, 6.5, 7.2, 6.9, 7.0, 6.3, 6.2, 6.1, 5.9, 5.8, 6.1, 6.7, 6.7, 6.6, 6.7, 6.9, 7.2, 7.1]
+	@datos_chocolate2 =[4.6, 4.6, 4.7, 4.7, 4.8, 4.7, 4.8, 4.8, 4.6, 4.4, 4.7, 4.7, 4.8, 4.7, 5.2, 5.9, 5.9, 5.7, 5.4, 5.3, 5.1, 4.8, 4.8, 4.9, 5.9]
+	@datos_azucar =	[4.9, 5.3, 5.9, 6.7 ,7.2, 7.6, 8.0, 8.2, 8.2, 8.4, 8.3, 8.3, 8.0, 7.5, 7.1, 6.8, 6.8, 6.9, 6.8, 6.3, 6.2, 6.3, 6.2, 6.3, 6.1]
+	@datos_azucar2 =	[6.3, 5.4, 5.6, 5.7, 6.5, 7.4, 7.9, 7.4, 7.7, 7.9, 7.9, 7.8, 7.8, 7.8, 8.0, 8.5, 9.4, 10.8, 10.5, 9.1, 8.9, 8.3, 7.7, 7.6, 7.5]
+	
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	@L_Manzana = Lista_Alimento.new()
+	@L_Yogurt = Lista_Alimento.new()
+	@L_Chocolate = Lista_Alimento.new()
+	@L_Azucar = Lista_Alimento.new()
 
 
 
@@ -211,15 +207,29 @@ RSpec.describe Comida do
 
 		it "Introducir lista con los datos de alimentos por individuo" do
 
-		    @List_aibc.insert_head(@azucar)
-		    @List_aibc.insert_head(@chocolate)
-		    @List_aibc.insert_head(@yogurt)
-		    @List_aibc.insert_head(@manzana)
+		   	@L_manzana1.insert_head(@datos_manzana)
+			@L_manzana2.insert_head(@datos_manzana2)
+			@L_yogurt1.insert_head(@datos_yogurt)
+			@L_yogurt2.insert_head(@datos_yogurt2)
+			@L_chocolate1.insert_head(@datos_chocolate)
+			@L_chocolate2.insert_head(@datos_chocolate2)
+			@L_azucar1.insert_head(@datos_azucar)
+			@L_azucar2.insert_head(@datos_azucar2)
+			
 
-		    expect(@List_aibc.count).to eq(4)
-		    expect(@List_aibc.to_s())
+			expect(@L_manzana1.to_s())
+		end
+
+		it "Introducir listas de cada individuo en una global" do
+
+			@L_Manzana.insertar(@L_manzana1)
+			@L_Manzana.insertar(@L_manzana2)
+
+		    expect(@L_Manzana.count).to eq(2)
+		    #expect(@List_aibc.to_s())
 			#expect(@List_aibc.map{|i| i}).to eq([@manzana,@yogurt,@chocolate,@azucar])
 		end
+
 =begin
 		it "Comprobar AIBC de manera iterativa" do
 			expect(@manzana.aibc_iterativo()).to eq([27.999999999999993,183.25])
