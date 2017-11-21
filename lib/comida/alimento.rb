@@ -78,12 +78,27 @@ class Alimento
 	def aibc_funcional
 
 		r = []
-		aux = @g.each do
+		s = []
+		@@Tamaño_muestra = @g.head.next.value.Tam
+		@g.map do |l| 
+			l.value.map do |j| 
+				if (j.value != l.value.head.next.value)
+						if j.value < l.value.head.next.value
+							s << 0.0
+						else
+							s << (( (j.value - l.value.head.next.value) + (j.prev.value - l.value.head.next.value) )/2) *5
+						end
+						
+				else
+				end
+			end
 		end
 
+		r[0] = s.take(@@Tamaño_muestra).reduce(:+)
+		r[1] = (s - s.take(@@Tamaño_muestra)).reduce(:+)
+		suma = [r[0],r[1]]
+
 	end
-
-
 end
 
 # encoding: utf-8
@@ -136,11 +151,11 @@ class Lista_Alimento
 		@cola = Node.new()
 		@Tam = 0
 		
-		@head.value = nil
+		@head.value = -1.0
 		@head.prev = nil
 		@head.next = @cola
 
-		@cola.value = nil
+		@cola.value = -1.0
 		@cola.prev = @head
 		@cola.next = nil
 	end
@@ -280,11 +295,11 @@ class Lista_Alimento
 		y = @Tam
 		while(y > i) do
 			aux = aux.next
-			yield aux.value
+			yield aux
 			y -= 1
 		end
 		if (aux.next != nil) 
-			yield aux.next.value
+			yield aux.next
 		else
 		end
 	end
