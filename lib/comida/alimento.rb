@@ -12,14 +12,14 @@ class Alimento
 	attr_reader :nombre, :proteinas, :glucidos, :lipidos, :valor_energetico, :g
 
 	#Inicialización de un alimento por nombre, proteínas, ǵlúcidos y lípidos
-	def initialize (nombre, pro, glu, lip, vector_al)
+	def initialize (nombre, pro, glu, lip, lista_al)
 
 		@nombre = nombre
 		@proteinas = pro
 		@glucidos = glu
 		@lipidos = lip
 
-		@g = vector_al
+		@g = lista_al #Lista de 2 listas de valores - Una por cada individuo
 
 		@valor_energetico = calcular_valor_energetico()
 	end

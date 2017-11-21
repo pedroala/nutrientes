@@ -3,42 +3,8 @@ require "spec_helper"
 RSpec.describe Comida do
 
   before :all do
-    @huevo = 	Alimento.new("huevo",14.1,0.0,19.5,nil)
-	@leche = 	Alimento.new("leche",3.3,4.8,3.2,0.0)
-	@yogurt = 	Alimento.new("yogurt",3.8,4.9,3.8,[[6.1, 6.6, 6.3, 6.3, 6.1, 6.9, 6.8, 6.5, 6.4, 6.9, 6.8, 6.5, 6.3, 6.2, 6.7, 6.2, 5.9, 5.8, 5.8, 5.8, 5.8, 5.8, 5.9, 6.2, 6.4],[4.9, 4.9, 5.2, 5.8, 6.5, 7.0, 7.2, 7.3, 7.3, 6.6, 6.2, 6.1, 6.0, 6.1, 5.9, 5.9, 5.9, 5.9, 5.8, 5.8, 5.5, 5.5, 5.6, 5.9, 5.9]])
-	@cerdo = 	Alimento.new("cerdo",21.5,0.0,6.3,nil)
-	@ternera = 	Alimento.new("ternera",21.1,0.0,3.1,nil)
-	@pollo = 	Alimento.new("pollo",20.6,0.0,5.6,nil)
-	@bacalao = 	Alimento.new("bacalao",17.7,0.0,0.4,nil)
-	@atun = 	Alimento.new("atun",21.5,0.0,15.5,nil)
-	@salmon = 	Alimento.new("salmon",19.9,0.0,13.6,nil)
-	@aceite = 	Alimento.new("aceite",0.0,0.2,99.6,nil)
-	@chocolate =Alimento.new("chocolate",5.3,47.0,30.0,[[6.5, 6.5, 6.7, 6.5, 6.5, 6.8, 6.7, 6.2, 6.5, 7.2, 6.9, 7.0, 6.3, 6.2, 6.1, 5.9, 5.8, 6.1, 6.7, 6.7, 6.6, 6.7, 6.9, 7.2, 7.1],[4.6, 4.6, 4.7, 4.7, 4.8, 4.7, 4.8, 4.8, 4.6, 4.4, 4.7, 4.7, 4.8, 4.7, 5.2, 5.9, 5.9, 5.7, 5.4, 5.3, 5.1, 4.8, 4.8, 4.9, 5.9]])
-	@azucar =	Alimento.new("azucar",0.0,99.8,0.0,[[4.9, 5.3, 5.9, 6.7 ,7.2, 7.6, 8.0, 8.2, 8.2, 8.4, 8.3, 8.3, 8.0, 7.5, 7.1, 6.8, 6.8, 6.9, 6.8, 6.3, 6.2, 6.3, 6.2, 6.3, 6.1],[6.3, 5.4, 5.6, 5.7, 6.5, 7.4, 7.9, 7.4, 7.7, 7.9, 7.9, 7.8, 7.8, 7.8, 8.0, 8.5, 9.4, 10.8, 10.5, 9.1, 8.9, 8.3, 7.7, 7.6, 7.5]])
-	@lentejas =	Alimento.new("lentejas",23.5,52.0,1.4,0.0)
-	@papas = 	Alimento.new("papas",2.0,15.4,0.1,nil)
-	@tomate = 	Alimento.new("tomate", 1.0,3.5,0.2,nil)
-	@cebolla = 	Alimento.new("cebolla",1.3,5.8,0.3,nil)
-	@manzana = 	Alimento.new("manzana",0.3,12.4,0.4,[[6.7, 6.5, 6.8, 6.9, 7.0, 7.1, 6.9, 6.9, 6.9, 6.7, 6.9, 7.3, 7.0, 7.0, 7.2, 7.1, 6.8, 7.2, 7.3, 7.0, 6.8, 6.7, 6.8, 6.7, 6.9],[4.6, 4.8, 5.3, 5.6, 6.1, 6.5, 6.6, 7.0, 7.0, 6.8, 6.4, 6.3, 6.1, 6.1, 6.2, 6.0, 6.1, 6.1, 6.2, 6.3, 6.4, 6.1, 6.1, 5.7, 5.9]])
-	@platanos = Alimento.new("platanos",1.2,21.4,0.2,nil)
 
-	@A = Node.new()
-
-	@List = Lista_Alimento.new()
-	@List_aibc = Lista_Alimento.new()
-
-	@mantequilla = Alimentos_Dervivados.new("mantequilla",0.7,0.0,83.2,"grasos",nil)
-	@arroz = Alimentos_Dervivados.new("arroz",6.8,77.7,0.6,"carbohidratos",nil)
-	@calabaza = Alimentos_Dervivados.new("calabaza",1.1,4.8,0.1,"verdura",nil)
-	@pera = Alimentos_Dervivados.new("pera",0.5,12.7,0.3,"fruta",nil)
-
-	@F = Node.new(@manzana)
-	@G = Node.new(@yogurt)
-	@H = Node.new(@chocolate)
-	@I = Node.new(@azucar)
-
-
-	@L_manzana1 = Lista_Alimento.new()
+  	@L_manzana1 = Lista_Alimento.new()
 	@L_manzana2 = Lista_Alimento.new()
 	@L_yogurt1 = Lista_Alimento.new()
 	@L_yogurt2 = Lista_Alimento.new()
@@ -62,7 +28,52 @@ RSpec.describe Comida do
 	@L_Chocolate = Lista_Alimento.new()
 	@L_Azucar = Lista_Alimento.new()
 
+   	@L_manzana1.insert_head(@datos_manzana)
+	@L_manzana2.insert_head(@datos_manzana2)
+	@L_yogurt1.insert_head(@datos_yogurt)
+	@L_yogurt2.insert_head(@datos_yogurt2)
+	@L_chocolate1.insert_head(@datos_chocolate)
+	@L_chocolate2.insert_head(@datos_chocolate2)
+	@L_azucar1.insert_head(@datos_azucar)
+	@L_azucar2.insert_head(@datos_azucar2)
+			
+	@L_Manzana.insertar(@L_manzana1)
+	@L_Manzana.insertar(@L_manzana2)
+	@L_Yogurt.insertar(@L_yogurt1)
+	@L_Yogurt.insertar(@L_yogurt2)
+	@L_Chocolate.insertar(@L_chocolate1)
+	@L_Chocolate.insertar(@L_chocolate2)
+	@L_Azucar.insertar(@L_azucar1)
+	@L_Azucar.insertar(@L_azucar2)
 
+    @huevo = 	Alimento.new("huevo",14.1,0.0,19.5,nil)
+	@leche = 	Alimento.new("leche",3.3,4.8,3.2,nil)
+	@yogurt = 	Alimento.new("yogurt",3.8,4.9,3.8,@L_Yogurt)
+	@cerdo = 	Alimento.new("cerdo",21.5,0.0,6.3,nil)
+	@ternera = 	Alimento.new("ternera",21.1,0.0,3.1,nil)
+	@pollo = 	Alimento.new("pollo",20.6,0.0,5.6,nil)
+	@bacalao = 	Alimento.new("bacalao",17.7,0.0,0.4,nil)
+	@atun = 	Alimento.new("atun",21.5,0.0,15.5,nil)
+	@salmon = 	Alimento.new("salmon",19.9,0.0,13.6,nil)
+	@aceite = 	Alimento.new("aceite",0.0,0.2,99.6,nil)
+	@chocolate =Alimento.new("chocolate",5.3,47.0,30.0,@L_Chocolate)
+	@azucar =	Alimento.new("azucar",0.0,99.8,0.0,@L_Azucar)
+	@lentejas =	Alimento.new("lentejas",23.5,52.0,1.4,nil)
+	@papas = 	Alimento.new("papas",2.0,15.4,0.1,nil)
+	@tomate = 	Alimento.new("tomate", 1.0,3.5,0.2,nil)
+	@cebolla = 	Alimento.new("cebolla",1.3,5.8,0.3,nil)
+	@manzana = 	Alimento.new("manzana",0.3,12.4,0.4,@L_Manzana)
+	@platanos = Alimento.new("platanos",1.2,21.4,0.2,nil)
+
+	@A = Node.new()
+
+	@List = Lista_Alimento.new()
+	@List_aibc = Lista_Alimento.new()
+
+	@mantequilla = Alimentos_Dervivados.new("mantequilla",0.7,0.0,83.2,"grasos",nil)
+	@arroz = Alimentos_Dervivados.new("arroz",6.8,77.7,0.6,"carbohidratos",nil)
+	@calabaza = Alimentos_Dervivados.new("calabaza",1.1,4.8,0.1,"verdura",nil)
+	@pera = Alimentos_Dervivados.new("pera",0.5,12.7,0.3,"fruta",nil)
 
 
   end
@@ -207,27 +218,19 @@ RSpec.describe Comida do
 
 		it "Introducir lista con los datos de alimentos por individuo" do
 
-		   	@L_manzana1.insert_head(@datos_manzana)
-			@L_manzana2.insert_head(@datos_manzana2)
-			@L_yogurt1.insert_head(@datos_yogurt)
-			@L_yogurt2.insert_head(@datos_yogurt2)
-			@L_chocolate1.insert_head(@datos_chocolate)
-			@L_chocolate2.insert_head(@datos_chocolate2)
-			@L_azucar1.insert_head(@datos_azucar)
-			@L_azucar2.insert_head(@datos_azucar2)
-			
-
 			expect(@L_manzana1.to_s())
 		end
 
 		it "Introducir listas de cada individuo en una global" do
 
-			@L_Manzana.insertar(@L_manzana1)
-			@L_Manzana.insertar(@L_manzana2)
-
 		    expect(@L_Manzana.count).to eq(2)
-		    #expect(@List_aibc.to_s())
-			#expect(@List_aibc.map{|i| i}).to eq([@manzana,@yogurt,@chocolate,@azucar])
+		    expect(@L_Manzana.to_s())
+			expect(@L_Manzana.map{|i| i}).to eq([@L_manzana1,@L_manzana2])
+		end
+
+		it "Comprobar que las listas se obtienen bien del alimento a la que pertenecen" do
+
+			expect(@manzana.g).to eq(@L_Manzana)
 		end
 
 =begin
