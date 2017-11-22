@@ -38,7 +38,7 @@ class Alimento
 	#Método de comparación para comparar alimentos y poder utilizar el módulo Comparable
 	def <=> (other)
 		return nil unless other.is_a? Alimento
-		valor_energetico <=> other.valor_energetico
+			valor_energetico <=> other.valor_energetico
 	end
 #Método para calcular el AIBC de un alimento por medio del paragidma de programación funcional, donde:
 #g representa una lista de listas  | l será un nodo de esa lista compleja 
@@ -50,6 +50,7 @@ class Alimento
 		r = []
 		s = []
 		@@Tamaño_muestra = @g.head.next.value.Tam
+		
 		@g.map do |l| 
 			l.value.map do |j| 
 				if (j.value != l.value.head.next.value)
@@ -58,7 +59,6 @@ class Alimento
 						else
 							s << (( (j.value - l.value.head.next.value) + (j.prev.value - l.value.head.next.value) )/2) *5
 						end
-						
 				else
 				end
 			end
@@ -110,8 +110,22 @@ class Alimentos_Dervivados < Alimento
 	end
 end
 
+
 Node = Struct.new(:value, :next, :prev)
 
+class Struct
+	include Comparable, Enumerable
+
+	def <=> (another)
+		return nil unless another.is_a? Node
+		self.value <=> another.value
+	end
+
+	def each
+		aux = self.value
+		yield aux.value
+	end
+end
 # encoding: utf-8
 # Esta clase se ha creado para crear
 # una lista que almacene alimentos y alimentos derivados
@@ -271,6 +285,33 @@ class Lista_Alimento
 	#Método each para poder utilizar el módulo Enumerable
 	def each
 
+		aux = @head
+		i=1
+		y = @Tam
+		while(y > i) do
+			aux = aux.next
+			yield aux.value
+			y -= 1
+		end
+		if (aux.next != nil) 
+			yield aux.next.value
+		else
+		end
+	end
+end
+
+# encoding: utf-8
+# Esta clase derivada se ha creado para crear
+# una lista que almacene datos de alimentos para calcular AIBC e IG
+# haciendo uso del Lenguaje de Programación
+# Ruby. Se han incluido los módulos de Enumerable y Comparable.  
+# Author::    Pedro Lima  (mailto:alu0100952599@ull.edu.es)
+# Copyright:: Cretive Commons
+# License::   Distributes under the same terms as Ruby
+
+class Lista_p09 < Lista_Alimento
+
+	def each
 		aux = @head
 		i=1
 		y = @Tam

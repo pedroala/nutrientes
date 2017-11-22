@@ -6,14 +6,14 @@ RSpec.describe Comida do
 
   	#Creación de listas para práctica 09
 
-  	@L_manzana1 = Lista_Alimento.new()
-	@L_manzana2 = Lista_Alimento.new()
-	@L_yogurt1 = Lista_Alimento.new()
-	@L_yogurt2 = Lista_Alimento.new()
-	@L_chocolate1 = Lista_Alimento.new()
-	@L_chocolate2 = Lista_Alimento.new()
-	@L_azucar1 = Lista_Alimento.new()
-	@L_azucar2 = Lista_Alimento.new()
+  	@L_manzana1 = Lista_p09.new()
+	@L_manzana2 = Lista_p09.new()
+	@L_yogurt1 = Lista_p09.new()
+	@L_yogurt2 = Lista_p09.new()
+	@L_chocolate1 = Lista_p09.new()
+	@L_chocolate2 = Lista_p09.new()
+	@L_azucar1 = Lista_p09.new()
+	@L_azucar2 = Lista_p09.new()
 
 	@datos_manzana = 	[6.7, 6.5, 6.8, 6.9, 7.0, 7.1, 6.9, 6.9, 6.9, 6.7, 6.9, 7.3, 7.0, 7.0, 7.2, 7.1, 6.8, 7.2, 7.3, 7.0, 6.8, 6.7, 6.8, 6.7, 6.9]
 	@datos_manzana2 =	[4.6, 4.8, 5.3, 5.6, 6.1, 6.5, 6.6, 7.0, 7.0, 6.8, 6.4, 6.3, 6.1, 6.1, 6.2, 6.0, 6.1, 6.1, 6.2, 6.3, 6.4, 6.1, 6.1, 5.7, 5.9]
@@ -25,10 +25,10 @@ RSpec.describe Comida do
 	@datos_azucar2 =	[6.3, 5.4, 5.6, 5.7, 6.5, 7.4, 7.9, 7.4, 7.7, 7.9, 7.9, 7.8, 7.8, 7.8, 8.0, 8.5, 9.4, 10.8, 10.5, 9.1, 8.9, 8.3, 7.7, 7.6, 7.5]
 	
 
-	@L_Manzana = Lista_Alimento.new()
-	@L_Yogurt = Lista_Alimento.new()
-	@L_Chocolate = Lista_Alimento.new()
-	@L_Azucar = Lista_Alimento.new()
+	@L_Manzana = Lista_p09.new()
+	@L_Yogurt = Lista_p09.new()
+	@L_Chocolate = Lista_p09.new()
+	@L_Azucar = Lista_p09.new()
 
 	@datos_manzana.each do |a|
    		@L_manzana1.insertar(a)
@@ -67,6 +67,9 @@ RSpec.describe Comida do
 	#Creación de alimentos con su nuevo atributo para datos para calcular el aibc e IG
 
     @huevo = 	Alimento.new("huevo",14.1,0.0,19.5,nil)
+    @huevo2 = 	Alimento.new("huevo",14.2,0.1,19.6,nil)
+    @huevo3 = 	Alimento.new("huevos",14.1,0.0,19.5,nil)
+
 	@leche = 	Alimento.new("leche",3.3,4.8,3.2,nil)
 	@yogurt = 	Alimento.new("yogurt",3.8,4.9,3.8,@L_Yogurt)
 	@cerdo = 	Alimento.new("cerdo",21.5,0.0,6.3,nil)
@@ -223,23 +226,29 @@ RSpec.describe Comida do
 			expect(@huevo > @pera).to eq(true) #kcal -> huevo = 231.9 | pera = 55.5
 			expect(@huevo < @chocolate).to eq(true) #kcal -> chocolate = 479.2
 			expect(@huevo < @leche).to eq(false)
+			expect(@huevo == @huevo2).to eq(false)
+			expect(@huevo == @huevo3).to eq(true)
 		end
 
 		it "Inlcuir módulo Enumerable en la clase Lista" do
 
 			#Al calcular AIBC e IG cambié el 'each' para que me devolviera un nodo en ves del valor 
 			#por eso el sort,detect y max no funcionan ahora.
+			@C = Node.new(@leche)
+			@D = Node.new(@lentejas)
+			expect(@C < @D).to eq(true)
 
-			#expect(@List.sort).to eq([@leche,@lentejas])
+			#expect(@List.sort).to eq([@C,@D])
+			expect(@List.sort).to eq([@leche,@lentejas])
 			expect(@List.all?).to eq(true)
 			expect(@List.any?).to eq(true)
 			expect(@List.count).to eq(2) #
-			#expect(@List.detect { |i| i == @leche}).to eq(@leche)
-			expect(@List.map{|i| i.value}).to eq([@leche,@lentejas])
-			#expect(@List.max).to eq(@lentejas)
+			expect(@List.detect { |i| i == @leche}).to eq(@leche)
+			expect(@List.map{|i| i}).to eq([@leche,@lentejas])
+			expect(@List.max).to eq(@lentejas)
 
 		end
-#=end
+
 	end
 
 	context "Pruebas de práctica 9 - Intento de programación funcional con ruby" do
