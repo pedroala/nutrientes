@@ -852,7 +852,7 @@ Comparable</p>
 
 <span class='kw'>def</span> <span class='op'>&lt;=&gt;</span> <span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
 	<span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'><span class='object_link'><a href="" title="Alimento (class)">Alimento</a></span></span>
-	<span class='id identifier rubyid_valor_energetico'>valor_energetico</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_valor_energetico'>valor_energetico</span>
+		<span class='id identifier rubyid_valor_energetico'>valor_energetico</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_valor_energetico'>valor_energetico</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -923,6 +923,7 @@ individuo y con la variable de instancia Tam conseguimos el size. Con
 	<span class='id identifier rubyid_r'>r</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
 	<span class='id identifier rubyid_s'>s</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
 	<span class='cvar'>@@Tamaño_muestra</span> <span class='op'>=</span> <span class='ivar'>@g</span><span class='period'>.</span><span class='id identifier rubyid_head'>head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='const'>Tam</span>
+	
 	<span class='ivar'>@g</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_l'>l</span><span class='op'>|</span> 
 		<span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_j'>j</span><span class='op'>|</span> 
 			<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_j'>j</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span> <span class='op'>!=</span> <span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_head'>head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
@@ -931,7 +932,6 @@ individuo y con la variable de instancia Tam conseguimos el size. Con
 					<span class='kw'>else</span>
 						<span class='id identifier rubyid_s'>s</span> <span class='op'>&lt;&lt;</span> <span class='lparen'>(</span><span class='lparen'>(</span> <span class='lparen'>(</span><span class='id identifier rubyid_j'>j</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span> <span class='op'>-</span> <span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_head'>head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_j'>j</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span> <span class='op'>-</span> <span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_head'>head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span> <span class='rparen'>)</span><span class='op'>/</span><span class='int'>2</span><span class='rparen'>)</span> <span class='op'>*</span><span class='int'>5</span>
 					<span class='kw'>end</span>
-					
 			<span class='kw'>else</span>
 			<span class='kw'>end</span>
 		<span class='kw'>end</span>
@@ -1091,7 +1091,7 @@ muestra.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Nov 21 22:19:30 2017 by
+  Generated on Wed Nov 22 11:45:53 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.3.1).
 </div>

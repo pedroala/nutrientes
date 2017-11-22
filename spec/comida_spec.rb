@@ -232,13 +232,12 @@ RSpec.describe Comida do
 
 		it "Inlcuir módulo Enumerable en la clase Lista" do
 
-			#Al calcular AIBC e IG cambié el 'each' para que me devolviera un nodo en ves del valor 
-			#por eso el sort,detect y max no funcionan ahora.
+			#Comparación de nodos
 			@C = Node.new(@leche)
 			@D = Node.new(@lentejas)
 			expect(@C < @D).to eq(true)
 
-			#expect(@List.sort).to eq([@C,@D])
+
 			expect(@List.sort).to eq([@leche,@lentejas])
 			expect(@List.all?).to eq(true)
 			expect(@List.any?).to eq(true)
