@@ -4,6 +4,9 @@ require "spec_helper"
 RSpec.describe Comida do
 
   before :all do
+
+#alimentos para la matriz
+
 	@huevo = 	Alimentos_Derivados.new("huevo",14.1,0.0,19.5,nil,"Huevos, lacteos y helados")
  	@leche = 	Alimentos_Derivados.new("leche",3.3,4.8,3.2,nil,"Huevos, lacteos y helados")
 	@yogurt = 	Alimentos_Derivados.new("yogurt",3.8,4.9,3.8,nil,"Huevos, lacteos y helados")
@@ -32,6 +35,20 @@ RSpec.describe Comida do
 	@manzana = 	Alimentos_Derivados.new("manzana",0.3,12.4,0.4,nil,"fruta")
 	@platanos = Alimentos_Derivados.new("platanos",1.2,21.4,0.2,nil,"fruta")
 	@pera = Alimentos_Derivados.new("pera",0.5,12.7,0.3,nil,"fruta")
+
+#vectores fila de la matriz
+
+	@vector_lacteos = [@huevo,@leche,@yogurt]
+	@vector_carnes = [@cerdo,@ternera,@pollo]
+	@vector_pescados = [@bacalao,@atun,@salmon]
+	@vector_grasos = [@aceite,@mantequilla,@chocolate]
+	@vector_carbohidratos = [@azucar, @arroz, @lentejas, @papas]
+	@vector_verduras = [@tomate,@calabaza,@cebolla]
+	@vector_frutas = [@manzana,@platanos,@pera]
+
+#vector de vectores (matriz)
+	@matriz = [@vector_lacteos,@vector_carnes,@vector_pescados,@vector_grasos,@vector_carbohidratos,@vector_verduras,@vector_frutas]
+
 
   end
 
