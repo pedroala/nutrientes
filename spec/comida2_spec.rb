@@ -66,5 +66,37 @@ RSpec.describe Comida do
   		
 
   	end
+
+  	it "Ordenación de la matriz de datos por medio del sort" do
+
+  		expect(@matriz.sort).to eq(@huevo)
+  	end
   end
 end
+
+=begin
+
+    "tomate",
+       "calabaza",
+       "cebolla"
+       "manzana"
+       "platanos", 
+       "pera",
+       "bacalao"
+       "atun"
+       "salmon"
+       + [#<Alimentos_Derivados:0x000000020f9270 @nombre="cerdo", @proteinas=21.5, @glucidos=0.0, @lipidos=6.3, @g=nil, @valor_energetico=142.7, @tipo="Carnes y derivados">,
+       +  #<Alimentos_Derivados:0x000000020f91f8 @nombre="ternera", @proteinas=21.1, @glucidos=0.0, @lipidos=3.1, @g=nil, @valor_energetico=112.30000000000001, @tipo="Carnes y derivados">,
+       +  #<Alimentos_Derivados:0x000000020f9158 @nombre="pollo", @proteinas=20.6, @glucidos=0.0, @lipidos=5.6, @g=nil, @valor_energetico=132.8, @tipo="Carnes y derivados">],
+       + [#<Alimentos_Derivados:0x000000020f9428 @nombre="huevo", @proteinas=14.1, @glucidos=0.0, @lipidos=19.5, @g=nil, @valor_energetico=231.9, @tipo="Huevos, lacteos y helados">,
+       +  #<Alimentos_Derivados:0x000000020f93b0 @nombre="leche", @proteinas=3.3, @glucidos=4.8, @lipidos=3.2, @g=nil, @valor_energetico=61.2, @tipo="Huevos, lacteos y helados">,
+       +  #<Alimentos_Derivados:0x000000020f9310 @nombre="yogurt", @proteinas=3.8, @glucidos=4.9, @lipidos=3.8, @g=nil, @valor_energetico=69.0, @tipo="Huevos, lacteos y helados">],
+       + [#<Alimentos_Derivados:0x000000020f8d98 @nombre="azucar", @proteinas=0.0, @glucidos=99.8, @lipidos=0.0, @g=nil, @valor_energetico=399.2, @tipo="carbohidratos">,
+       +  #<Alimentos_Derivados:0x000000020f8cf8 @nombre="arroz", @proteinas=6.8, @glucidos=77.7, @lipidos=0.6, @g=nil, @valor_energetico=343.4, @tipo="carbohidratos">,
+       +  #<Alimentos_Derivados:0x000000020f8c30 @nombre="lentejas", @proteinas=23.5, @glucidos=52.0, @lipidos=1.4, @g=nil, @valor_energetico=314.6, @tipo="carbohidratos">,
+       +  #<Alimentos_Derivados:0x000000020f8bb8 @nombre="papas", @proteinas=2.0, @glucidos=15.4, @lipidos=0.1, @g=nil, @valor_energetico=70.5, @tipo="carbohidratos">],
+       + [#<Alimentos_Derivados:0x000000020f8f28 @nombre="aceite", @proteinas=0.0, @glucidos=0.2, @lipidos=99.6, @g=nil, @valor_energetico=897.1999999999999, @tipo="grasos">,
+       +  #<Alimentos_Derivados:0x000000020f8eb0 @nombre="mantequilla", @proteinas=0.7, @glucidos=0.0, @lipidos=83.2, @g=nil, @valor_energetico=751.6, @tipo="grasos">,
+       +  #<Alimentos_Derivados:0x000000020f8e10 @nombre="chocolate", @proteinas=5.3, @glucidos=47.0, @lipidos=30.0, @g=nil, @valor_energetico=479.2, @tipo="grasos">]]
+       
+=end
