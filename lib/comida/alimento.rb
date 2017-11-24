@@ -92,7 +92,7 @@ end
 # License::   Distributes under the same terms as Ruby
 
 
-class Alimentos_Dervivados < Alimento
+class Alimentos_Derivados < Alimento
 	attr_reader :tipo
 
 	#Inicialización de un alimento por nombre, proteínas, ǵlúcidos y lípidos

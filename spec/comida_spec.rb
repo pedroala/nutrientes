@@ -67,10 +67,7 @@ RSpec.describe Comida do
 	#Creación de alimentos con su nuevo atributo para datos para calcular el aibc e IG
 
     @huevo = 	Alimento.new("huevo",14.1,0.0,19.5,nil)
-    @huevo2 = 	Alimento.new("huevo",14.2,0.1,19.6,nil)
-    @huevo3 = 	Alimento.new("huevos",14.1,0.0,19.5,nil)
-
-	@leche = 	Alimento.new("leche",3.3,4.8,3.2,nil)
+ 	@leche = 	Alimento.new("leche",3.3,4.8,3.2,nil)
 	@yogurt = 	Alimento.new("yogurt",3.8,4.9,3.8,@L_Yogurt)
 	@cerdo = 	Alimento.new("cerdo",21.5,0.0,6.3,nil)
 	@ternera = 	Alimento.new("ternera",21.1,0.0,3.1,nil)
@@ -97,10 +94,10 @@ RSpec.describe Comida do
 	@List = Lista_Alimento.new()
 	
 
-	@mantequilla = Alimentos_Dervivados.new("mantequilla",0.7,0.0,83.2,"grasos",nil)
-	@arroz = Alimentos_Dervivados.new("arroz",6.8,77.7,0.6,"carbohidratos",nil)
-	@calabaza = Alimentos_Dervivados.new("calabaza",1.1,4.8,0.1,"verdura",nil)
-	@pera = Alimentos_Dervivados.new("pera",0.5,12.7,0.3,"fruta",nil)
+	@mantequilla = Alimentos_Derivados.new("mantequilla",0.7,0.0,83.2,"grasos",nil)
+	@arroz = Alimentos_Derivados.new("arroz",6.8,77.7,0.6,"carbohidratos",nil)
+	@calabaza = Alimentos_Derivados.new("calabaza",1.1,4.8,0.1,"verdura",nil)
+	@pera = Alimentos_Derivados.new("pera",0.5,12.7,0.3,"fruta",nil)
 
 
   end
@@ -204,8 +201,8 @@ RSpec.describe Comida do
 	context "Pruebas de clases derivadas de Alimento" do
 	  it "Instanciar alimentos para comprobar constructor y variables de instancias para las clases derivadas" do
 		expect(@huevo.class).to eq(Alimento)
-		expect(@pera.class).to eq(Alimentos_Dervivados)
-		expect(@mantequilla.class).to eq(Alimentos_Dervivados)
+		expect(@pera.class).to eq(Alimentos_Derivados)
+		expect(@mantequilla.class).to eq(Alimentos_Derivados)
 		puts @huevo.to_s()
 		puts @pera.to_s()
 		puts @mantequilla.to_s()
@@ -214,7 +211,7 @@ RSpec.describe Comida do
 
 	  it "Comprobar clases y superclases, es decir, jerarquía de objetos" do
 
-	  	expect(@calabaza.class).to eq(Alimentos_Dervivados)
+	  	expect(@calabaza.class).to eq(Alimentos_Derivados)
 	  	expect(@calabaza.is_a?Alimento).to eq(true)
 	  	expect(@calabaza.is_a?Object).to eq(true)
 	  	expect(@calabaza.is_a?BasicObject).to eq(true)
@@ -226,8 +223,6 @@ RSpec.describe Comida do
 			expect(@huevo > @pera).to eq(true) #kcal -> huevo = 231.9 | pera = 55.5
 			expect(@huevo < @chocolate).to eq(true) #kcal -> chocolate = 479.2
 			expect(@huevo < @leche).to eq(false)
-			expect(@huevo == @huevo2).to eq(false)
-			expect(@huevo == @huevo3).to eq(true)
 		end
 
 		it "Inlcuir módulo Enumerable en la clase Lista" do
@@ -284,4 +279,28 @@ RSpec.describe Comida do
 
 	end
 
+end
+
+RSpec.describe Comida do
+
+  before :all do
+
+
+  end
+
+  context "Practica 10" do
+
+  	it "Instanciar alimentos derivados que deberemos colocar en la tabla" do
+
+  		expect(@huevo.is_a?Alimento).to eq(true)
+  		expect(@huevo.is_a?Alimentos_Derivados).to eq(true)
+  		expect(@huevo.class).to eq(Alimentos_Derivados)
+
+  		expect(@leche.is_a?Alimento).to eq(true)
+  		expect(@leche.is_a?Alimentos_Derivados).to eq(true)
+  		expect(@leche.class).to eq(Alimentos_Derivados)
+  		
+
+  	end
+  end
 end
