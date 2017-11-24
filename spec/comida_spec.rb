@@ -94,10 +94,10 @@ RSpec.describe Comida do
 	@List = Lista_Alimento.new()
 	
 
-	@mantequilla = Alimentos_Derivados.new("mantequilla",0.7,0.0,83.2,"grasos",nil)
-	@arroz = Alimentos_Derivados.new("arroz",6.8,77.7,0.6,"carbohidratos",nil)
-	@calabaza = Alimentos_Derivados.new("calabaza",1.1,4.8,0.1,"verdura",nil)
-	@pera = Alimentos_Derivados.new("pera",0.5,12.7,0.3,"fruta",nil)
+	@mantequilla = Alimentos_Derivados.new("mantequilla",0.7,0.0,83.2,nil,"grasos")
+	@arroz = Alimentos_Derivados.new("arroz",6.8,77.7,0.6,nil,"carbohidratos")
+	@calabaza = Alimentos_Derivados.new("calabaza",1.1,4.8,0.1,nil,"verdura")
+	@pera = Alimentos_Derivados.new("pera",0.5,12.7,0.3,nil,"fruta")
 
 
   end
@@ -279,28 +279,4 @@ RSpec.describe Comida do
 
 	end
 
-end
-
-RSpec.describe Comida do
-
-  before :all do
-
-
-  end
-
-  context "Practica 10" do
-
-  	it "Instanciar alimentos derivados que deberemos colocar en la tabla" do
-
-  		expect(@huevo.is_a?Alimento).to eq(true)
-  		expect(@huevo.is_a?Alimentos_Derivados).to eq(true)
-  		expect(@huevo.class).to eq(Alimentos_Derivados)
-
-  		expect(@leche.is_a?Alimento).to eq(true)
-  		expect(@leche.is_a?Alimentos_Derivados).to eq(true)
-  		expect(@leche.class).to eq(Alimentos_Derivados)
-  		
-
-  	end
-  end
 end
