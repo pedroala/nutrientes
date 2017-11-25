@@ -80,6 +80,7 @@ class Alimento
 		end
 		i.map{|n| n*(100/self.g.Tam)}.inject(:+)
 	end
+
 end
 
 # encoding: utf-8
@@ -325,4 +326,32 @@ class Lista_p09 < Lista_Alimento
 		else
 		end
 	end
+end
+
+class Array
+
+	def ordenar_each
+=begin	
+		return nil unless self.is_a? Array
+		self.each do |x|
+			if self.each do |l|
+				if l < x
+					#self.insert(self.index(x), self.at(self.find_index(l)) )
+					self.push(l)
+				end
+			end
+			end
+		end
+		
+		puts self.map{|x| x.valor_energetico}
+		puts self.size()
+		#self
+=end
+	end
+
+	def ordenar_for
+
+	end
+
+
 end
