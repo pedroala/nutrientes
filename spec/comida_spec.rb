@@ -116,9 +116,9 @@ RSpec.describe Comida do
 	  end
 	  
 	  it "Calcular valor energético del alimento" do
-		expect(@huevo.valor_energetico).to eq(231.9)
-		expect(@pera.valor_energetico).to eq(55.5)
-		expect(@chocolate.valor_energetico).to eq(479.2)
+		expect(@huevo.valor_energetico).to eq(231.900)
+		expect(@pera.valor_energetico).to eq(55.500)
+		expect(@chocolate.valor_energetico).to eq(479.200)
 
 
 	  end

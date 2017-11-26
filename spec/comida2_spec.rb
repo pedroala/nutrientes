@@ -1,5 +1,5 @@
 require "spec_helper"
-
+require "benchmark"
 
 RSpec.describe Comida do
 
@@ -69,6 +69,13 @@ RSpec.describe Comida do
 
   	end
 
+  	it "Visualización de datos" do
+
+  		#puts @matriz.to_s()
+  		puts @array_alimentos.to_s()
+
+  	end
+
   	it "Ordenación de la matriz y vector de datos por medio del sort" do
   		@array_ordenado = @array_alimentos.sort()
   		@matriz_ordenada = @matriz.sort()
@@ -87,6 +94,14 @@ RSpec.describe Comida do
   	it "Ordenación de matriz y vector de datos por medio del for" do
   		expect(@matriz.ordenar_for_matrix()).to eq([[@leche,@yogurt,@huevo],[@ternera,@pollo,@cerdo],[@bacalao,@salmon,@atun],[@chocolate,@mantequilla,@aceite],[@papas,@lentejas,@arroz,@azucar],[@tomate,@calabaza,@cebolla],[@manzana,@pera,@platanos]])
   		expect(@array_alimentos.ordenar_for_vec()).to eq([@tomate,@calabaza,@cebolla,@manzana,@pera,@leche,@yogurt,@papas,@bacalao,@platanos,@ternera,@pollo,@cerdo,@salmon,@atun,@huevo,@lentejas,@arroz,@azucar,@chocolate,@mantequilla,@aceite])
+  	end
+
+  	it "Uso del benchmark" do
+  		Benchmark.bm(10) do |x|
+		  x.report("for:")   { @array_alimentos.ordenar_for_vec}
+		  x.report("sort:") { @array_alimentos.sort}
+		  #x.report("each:")  { @array_alimentos.ordenar_each}
+		end
   	end
   end
 end    

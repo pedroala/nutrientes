@@ -33,6 +33,7 @@ class Alimento
 	#Calcular el valor energético de un alimento a través de sus proteinas, glúcidos y lípidos
 	def calcular_valor_energetico
 		@valor_energetico = (@proteinas+@glucidos)*4 + @lipidos*9
+		@valor_energetico = @valor_energetico.round(2)
 	end
 
 	#Método de comparación para comparar alimentos y poder utilizar el módulo Comparable
@@ -393,6 +394,10 @@ class Array
 		self
 	end
 
-
+	def to_s
+		for i in 0..(self.size()-1)
+			puts "Nombre: #{self[i].nombre} || Valor energético: #{self[i].valor_energetico}"
+		end
+	end
 
 end
