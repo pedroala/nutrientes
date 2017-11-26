@@ -85,8 +85,8 @@ RSpec.describe Comida do
   	end
 
   	it "Ordenación de matriz y vector de datos por medio del for" do
-  		#expect(@matriz.ordenar_each()).to eq([[@tomate,@calabaza,@cebolla],[@manzana,@platanos,@pera],[@bacalao,@atun,@salmon],[@cerdo,@ternera,@pollo],[@huevo,@leche,@yogurt],[@azucar,@arroz,@lentejas,@papas],[@aceite,@mantequilla,@chocolate]])
-  		expect(@array_alimentos.ordenar_for()).to eq([@tomate,@calabaza,@cebolla,@manzana,@pera,@leche,@yogurt,@papas,@bacalao,@platanos,@ternera,@pollo,@cerdo,@salmon,@atun,@huevo,@lentejas,@arroz,@azucar,@chocolate,@mantequilla,@aceite])
+  		expect(@matriz.ordenar_for_matrix()).to eq([[@leche,@yogurt,@huevo],[@ternera,@pollo,@cerdo],[@bacalao,@salmon,@atun],[@chocolate,@mantequilla,@aceite],[@papas,@lentejas,@arroz,@azucar],[@tomate,@calabaza,@cebolla],[@manzana,@pera,@platanos]])
+  		expect(@array_alimentos.ordenar_for_vec()).to eq([@tomate,@calabaza,@cebolla,@manzana,@pera,@leche,@yogurt,@papas,@bacalao,@platanos,@ternera,@pollo,@cerdo,@salmon,@atun,@huevo,@lentejas,@arroz,@azucar,@chocolate,@mantequilla,@aceite])
   	end
   end
 end    

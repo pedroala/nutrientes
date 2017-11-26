@@ -349,7 +349,7 @@ class Array
 =end
 	end
 
-	def ordenar_for
+	def ordenar_for_vec
 
 		aux = false
 
@@ -369,6 +369,30 @@ class Array
 		end
 		self
 	end
+
+	def ordenar_for_matrix
+
+		aux = false
+
+		while !aux
+
+			aux = true
+
+			for i in 0..(self.size()-1)
+				for j in 0..(self[i].size()-2)
+
+					if self[i][j] > self[i][j+1]
+						aux2 = self[i][j+1]
+						self[i][j+1] = self[i][j]
+						self[i][j] = aux2
+						aux = false
+					end
+				end
+			end
+		end
+		self
+	end
+
 
 
 end
