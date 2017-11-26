@@ -71,7 +71,7 @@ RSpec.describe Comida do
 
   	it "Visualización de datos" do
 
-  		#puts @matriz.to_s()
+  		puts @matriz.to_s_matrix()
   		puts @array_alimentos.to_s()
 
   	end

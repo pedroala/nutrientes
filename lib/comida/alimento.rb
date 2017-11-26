@@ -396,7 +396,19 @@ class Array
 
 	def to_s
 		for i in 0..(self.size()-1)
-			puts "Nombre: #{self[i].nombre} || Valor energético: #{self[i].valor_energetico}"
+			puts "...................................................................................."
+			puts "Tipo: #{self[i].tipo} || Nombre: #{self[i].nombre} || Valor energético: #{self[i].valor_energetico}"
+		end
+	end
+
+	def to_s_matrix
+		for i in 0..(self.size()-1)
+			puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+			puts "Tipo: #{self[i][0].tipo}"
+			puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+			for j in 0..(self[i].size()-1)
+				puts "Nombre: #{self[i][j].nombre} || Valor energético: #{self[i][j].valor_energetico}"
+			end
 		end
 	end
 
