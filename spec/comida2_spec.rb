@@ -97,7 +97,7 @@ RSpec.describe Comida do
   	end
 
   	it "Uso del benchmark" do
-  		Benchmark.bm(10) do |x|
+  		Benchmark.bm(7) do |x|
 		  x.report("for:")   { @array_alimentos.ordenar_for_vec}
 		  x.report("sort:") { @array_alimentos.sort}
 		  #x.report("each:")  { @array_alimentos.ordenar_each}
