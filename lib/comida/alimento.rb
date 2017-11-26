@@ -351,6 +351,23 @@ class Array
 
 	def ordenar_for
 
+		aux = false
+
+		while !aux
+
+			aux = true
+
+			for i in 0..(self.size()-2)
+
+				if self[i] > self[i+1]
+					aux2 = self[i+1]
+					self[i+1] = self[i]
+					self[i] = aux2
+					aux = false
+				end
+			end
+		end
+		self
 	end
 
 
