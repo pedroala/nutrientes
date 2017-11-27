@@ -331,24 +331,52 @@ end
 
 class Array
 
+=begin
 	def ordenar_each
-=begin	
+
 		return nil unless self.is_a? Array
 		self.each do |x|
-			if self.each do |l|
-				if l < x
-					#self.insert(self.index(x), self.at(self.find_index(l)) )
-					self.push(l)
+			min = x
+			self.each do |l|
+				if (min > l)
+					x,l = l,x
+				else
 				end
-			end
+			
 			end
 		end
 		
-		puts self.map{|x| x.valor_energetico}
-		puts self.size()
-		#self
-=end
+		#puts self.map{|x| x.valor_energetico}
+		#puts self.size()
+		self
+
 	end
+=end
+
+def quicksort(array)
+    if array.length < 1
+  		return array
+  	else
+		  pivot = array.sample
+		  array.delete_at(array.index(pivot)) # remove the pivot
+		  #puts "Picked pivot of: #{pivot}"
+		  less = []
+		  greater = []
+
+		array.each do |x|
+		   if x <= pivot
+		     less << x
+		   else
+		     greater << x
+		   end
+		 end
+	end
+  sorted_array = []
+  sorted_array << array.quicksort(less)
+  sorted_array << pivot
+  sorted_array << array.quicksort(greater)
+  sorted_array.flatten
+end
 
 	def ordenar_for_vec
 
