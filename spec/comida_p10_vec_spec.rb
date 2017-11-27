@@ -71,7 +71,8 @@ RSpec.describe Comida do
   	end
   	describe "++++++++++++Visualizar datos++++++++++++++++++" do
   	it "Visualización de datos" do
-
+	#comento la visualización para que las pruebas sean más faciles de leer
+	
   		#puts @matriz.to_s_matrix()
   		#puts @array_alimentos.to_s()
 
@@ -89,8 +90,6 @@ RSpec.describe Comida do
 
   	it "Ordenación de matriz y vector de datos por medio del each" do
 
-  		#expect(@matriz.ordenar_each()).to eq([[@tomate,@calabaza,@cebolla],[@manzana,@platanos,@pera],[@bacalao,@atun,@salmon],[@cerdo,@ternera,@pollo],[@huevo,@leche,@yogurt],[@azucar,@arroz,@lentejas,@papas],[@aceite,@mantequilla,@chocolate]])
-  		#expect(@array_alimentos.ordenar_each()).to eq([@tomate,@calabaza,@cebolla,@manzana,@pera,@leche,@yogurt,@papas,@bacalao,@platanos,@ternera,@pollo,@cerdo,@salmon,@atun,@huevo,@lentejas,@arroz,@azucar,@chocolate,@mantequilla,@aceite])
   		expect(@array_alimentos.quicksort(@array_alimentos.dup())).to eq([@tomate,@calabaza,@cebolla,@manzana,@pera,@leche,@yogurt,@papas,@bacalao,@platanos,@ternera,@pollo,@cerdo,@salmon,@atun,@huevo,@lentejas,@arroz,@azucar,@chocolate,@mantequilla,@aceite])
  		
   	end

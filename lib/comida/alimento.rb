@@ -262,18 +262,17 @@ class Lista_Alimento
 		while(x > i) do
 			
 			aux = aux.next
-			puts " Tamaño de la lista: #{x} alimentos ||"
-			puts " Elemento: #{aux.value} ||"
-			puts " ----------------------------------------"
+
+			puts " Nombre: #{aux.value.nombre} || Valor Energético: #{aux.value.valor_energetico} || G: #{aux.value.glucidos} || P: #{aux.value.proteinas} || L: #{aux.value.lipidos}"
+			puts " *------------------------------------------------------------------------------------------*"
 
 			x = x - 1
 
 		end
 		if (aux.next != nil) 
-			puts " Tamaño de la lista: #{x} alimentos ||"
-			puts " Elemento: #{aux.next.value} ||"
-			puts " ----------------------------------------"
-		else
+			puts " Nombre: #{aux.next.value.nombre} || Valor Energético: #{aux.next.value.valor_energetico} || G: #{aux.next.value.glucidos} || P: #{aux.next.value.proteinas} || L: #{aux.next.value.lipidos}"
+			puts " *------------------------------------------------------------------------------------------*"
+			puts " Tamaño de la lista: #{@Tam} alimentos ||"
 		end
 	end
 
@@ -331,35 +330,13 @@ end
 
 class Array
 
-=begin
-	def ordenar_each
-
-		return nil unless self.is_a? Array
-		self.each do |x|
-			min = x
-			self.each do |l|
-				if (min > l)
-					x,l = l,x
-				else
-				end
-			
-			end
-		end
-		
-		#puts self.map{|x| x.valor_energetico}
-		#puts self.size()
-		self
-
-	end
-=end
-
 def quicksort(array)
     if array.length < 1
   		return array
   	else
 		  pivot = array.sample
-		  array.delete_at(array.index(pivot)) # remove the pivot
-		  #puts "Picked pivot of: #{pivot}"
+		  array.delete_at(array.index(pivot)) 
+
 		  less = []
 		  greater = []
 
