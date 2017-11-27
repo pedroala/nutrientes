@@ -70,16 +70,14 @@ RSpec.describe Comida do
   			#puts @Tabla.to_s()
   		end
   	end
-=begin
-  	it "Ordenación de la matriz y vector de datos por medio del sort" do
-  		@array_ordenado = @array_alimentos.sort()
-  		@matriz_ordenada = @matriz.sort()
-  		expect(@matriz.sort()).to eq(@matriz_ordenada)
-  		expect(@matriz.sort).to eq([[@tomate,@calabaza,@cebolla],[@manzana,@platanos,@pera],[@bacalao,@atun,@salmon],[@cerdo,@ternera,@pollo],[@huevo,@leche,@yogurt],[@azucar,@arroz,@lentejas,@papas],[@aceite,@mantequilla,@chocolate]])
- 		expect(@array_alimentos.sort).to eq(@array_ordenado)
- 		expect(@array_alimentos.sort).to eq([@tomate,@calabaza,@cebolla,@manzana,@pera,@leche,@yogurt,@papas,@bacalao,@platanos,@ternera,@pollo,@cerdo,@salmon,@atun,@huevo,@lentejas,@arroz,@azucar,@chocolate,@mantequilla,@aceite])
-  	end
 
+  	it "Ordenación de la lista con tabla de datos por medio del sort" do
+
+  		@Tabla_ordenada = @Tabla.sort()
+  		expect(@Tabla.sort).to eq(@Tabla_ordenada)
+ 		expect(@Tabla.sort).to eq([@tomate,@calabaza,@cebolla,@manzana,@pera,@leche,@yogurt,@papas,@bacalao,@platanos,@ternera,@pollo,@cerdo,@salmon,@atun,@huevo,@lentejas,@arroz,@azucar,@chocolate,@mantequilla,@aceite])
+  	end
+=begin
   	it "Ordenación de matriz y vector de datos por medio del each" do
 
   		expect(@array_alimentos.quicksort(@array_alimentos.dup())).to eq([@tomate,@calabaza,@cebolla,@manzana,@pera,@leche,@yogurt,@papas,@bacalao,@platanos,@ternera,@pollo,@cerdo,@salmon,@atun,@huevo,@lentejas,@arroz,@azucar,@chocolate,@mantequilla,@aceite])
