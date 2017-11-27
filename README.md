@@ -25,7 +25,7 @@ Calcular valor energético de un alimento y uso de TDD
  
 # Comida
 
-Gema para calcular el valor energético de un alimento en base a sus proteinas, glúcidos y lípidos
+Gema para calculara el valor energético de un alimento en base a sus proteinas, glúcidos y lípidos
 
 ## Installation
 
