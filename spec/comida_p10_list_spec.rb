@@ -77,17 +77,18 @@ RSpec.describe Comida do
   		expect(@Tabla.sort).to eq(@Tabla_ordenada)
  		expect(@Tabla.sort).to eq([@tomate,@calabaza,@cebolla,@manzana,@pera,@leche,@yogurt,@papas,@bacalao,@platanos,@ternera,@pollo,@cerdo,@salmon,@atun,@huevo,@lentejas,@arroz,@azucar,@chocolate,@mantequilla,@aceite])
   	end
-=begin
-  	it "Ordenación de matriz y vector de datos por medio del each" do
 
-  		expect(@array_alimentos.quicksort(@array_alimentos.dup())).to eq([@tomate,@calabaza,@cebolla,@manzana,@pera,@leche,@yogurt,@papas,@bacalao,@platanos,@ternera,@pollo,@cerdo,@salmon,@atun,@huevo,@lentejas,@arroz,@azucar,@chocolate,@mantequilla,@aceite])
+ 	it "Ordenación de lista de datos por medio del each" do
+
+ # 		expect(@Tabla.ordenar_each_list()).to eq(@Tabla.sort())
  		
   	end
 
   	it "Ordenación de matriz y vector de datos por medio del for" do
-  		expect(@matriz.ordenar_for_matrix()).to eq([[@leche,@yogurt,@huevo],[@ternera,@pollo,@cerdo],[@bacalao,@salmon,@atun],[@chocolate,@mantequilla,@aceite],[@papas,@lentejas,@arroz,@azucar],[@tomate,@calabaza,@cebolla],[@manzana,@pera,@platanos]])
-  		expect(@array_alimentos.ordenar_for_vec()).to eq([@tomate,@calabaza,@cebolla,@manzana,@pera,@leche,@yogurt,@papas,@bacalao,@platanos,@ternera,@pollo,@cerdo,@salmon,@atun,@huevo,@lentejas,@arroz,@azucar,@chocolate,@mantequilla,@aceite])
+  		#expect(@Tabla.ordenar_for_list()).to eq([@tomate,@calabaza,@cebolla,@manzana,@pera,@leche,@yogurt,@papas,@bacalao,@platanos,@ternera,@pollo,@cerdo,@salmon,@atun,@huevo,@lentejas,@arroz,@azucar,@chocolate,@mantequilla,@aceite])
   	end
+
+=begin
 
   	it "Uso del benchmark" do
 

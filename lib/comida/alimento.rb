@@ -127,6 +127,7 @@ class Struct
 		aux = self.value
 		yield aux.value
 	end
+
 end
 # encoding: utf-8
 # Esta clase se ha creado para crear
@@ -277,11 +278,11 @@ class Lista_Alimento
 	end
 
 	#Método de comparasión para comparar alimentos y poder utilizar el módulo Comparable
-	def <=> (another)
-		aux = Node.new()
-
-		self.Node.value <=> another.Node.value
-	end
+#	def <=> (another)
+#		aux = Node.new()
+#
+#		self <=> another
+#	end
 
 	#Método each para poder utilizar el módulo Enumerable
 	def each
@@ -299,6 +300,65 @@ class Lista_Alimento
 		else
 		end
 	end
+
+	#Métodos práctica 10 - ordenación
+=begin
+	def ordenar_each_list 
+
+		aux = Lista_Alimento.new()
+
+		self.each do |l|
+			#aux.insertar(lista.min)
+			aux.inject do |min, other|
+   				if min > other 
+   					aux << other
+   				else
+   					aux << min 
+   				end
+			end
+		end
+		aux
+	end
+=end
+=begin
+	def ordenar_for_list
+
+		aux = false
+		aux_node = Node.new()
+		aux_node = self.head.next
+		aux2 = Node.new()
+
+		#lista = Lista_Alimento.new()
+
+		while !aux
+
+			aux = true
+
+			while aux_node.next != nil
+
+				if aux_node.value > aux_node.next.value
+
+					aux2.value = aux_node.next.value
+					aux2.next = aux_node.next.next
+					aux2.prev = aux_node.next.prev
+
+					aux_node.next.value = aux_node.value
+					aux_node.next.next = aux_node.next
+					aux_node.next.prev = aux_node.prev
+
+ 					aux_node.value = aux2.value
+ 					aux_node.prev = aux2.prev
+ 					aux_node.next = aux2.next
+
+					aux = false
+				end
+			end
+		end
+		#self
+	end
+
+=end
+
 end
 
 # encoding: utf-8

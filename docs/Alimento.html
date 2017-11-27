@@ -130,7 +130,7 @@ href="mailto:alu0100952599@ull.edu.es">alu0100952599@ull.edu.es</a>)</p>
 
 </div><div id="subclasses">
   <h2>Direct Known Subclasses</h2>
-  <p class="children"><span class='object_link'><a href="Alimentos_Dervivados.html" title="Alimentos_Dervivados (class)">Alimentos_Dervivados</a></span></p>
+  <p class="children"><span class='object_link'><a href="Alimentos_Derivados.html" title="Alimentos_Derivados (class)">Alimentos_Derivados</a></span></p>
 </div>
 
 
@@ -842,13 +842,13 @@ Comparable</p>
       <pre class="lines">
 
 
-39
 40
 41
-42</pre>
+42
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='op'>&lt;=&gt;</span> <span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
 	<span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'><span class='object_link'><a href="" title="Alimento (class)">Alimento</a></span></span>
@@ -890,7 +890,6 @@ individuo y con la variable de instancia Tam conseguimos el size. Con
       <pre class="lines">
 
 
-48
 49
 50
 51
@@ -913,10 +912,11 @@ individuo y con la variable de instancia Tam conseguimos el size. Con
 68
 69
 70
-71</pre>
+71
+72</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_aibc_funcional'>aibc_funcional</span>
 
@@ -976,13 +976,15 @@ glúcidos y lípidos</p>
 
 34
 35
-36</pre>
+36
+37</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_calcular_valor_energetico'>calcular_valor_energetico</span>
 	<span class='ivar'>@valor_energetico</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='ivar'>@proteinas</span><span class='op'>+</span><span class='ivar'>@glucidos</span><span class='rparen'>)</span><span class='op'>*</span><span class='int'>4</span> <span class='op'>+</span> <span class='ivar'>@lipidos</span><span class='op'>*</span><span class='int'>9</span>
+	<span class='ivar'>@valor_energetico</span> <span class='op'>=</span> <span class='ivar'>@valor_energetico</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1018,17 +1020,17 @@ muestra.</p>
       <pre class="lines">
 
 
-75
 76
 77
 78
 79
 80
 81
-82</pre>
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 75</span>
+      <pre class="code"><span class="info file"># File 'lib/comida/alimento.rb', line 76</span>
 
 <span class='kw'>def</span> <span class='const'>IG</span> <span class='lparen'>(</span><span class='id identifier rubyid_glucosa'>glucosa</span><span class='rparen'>)</span>
 
@@ -1091,7 +1093,7 @@ muestra.</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Nov 22 11:45:53 2017 by
+  Generated on Mon Nov 27 17:18:28 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.3.1).
 </div>
