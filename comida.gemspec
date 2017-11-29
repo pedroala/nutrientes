@@ -12,12 +12,12 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Calcular valor energético.}
   spec.description   = %q{Calcular valor energético respecto a las proteinas, glúcidos y lipidos de un alimento.}
-  spec.homepage      = "https://github.com/pedroala/code_travis.git"
+  spec.homepage      = "https://github.com/pedroala/codetravis.git"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "https://github.com/pedroala/code_travis.git"
+    spec.metadata["allowed_push_host"] = "https://github.com/pedroala/codetravis.git"
  else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
