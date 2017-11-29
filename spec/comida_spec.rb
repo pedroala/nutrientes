@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe Comida do
+RSpec.describe Comida do 
 
   before :all do
 

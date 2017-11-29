@@ -2,7 +2,7 @@ require "spec_helper"
 require "benchmark"
 include Benchmark
 
-RSpec.describe Comida do
+RSpec.describe Comida do 
 
   before :all do
 
